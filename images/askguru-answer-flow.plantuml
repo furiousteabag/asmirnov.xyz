@@ -1,0 +1,53 @@
+@startuml
+
+<style>
+activityDiagram {
+    diamond {
+    BackgroundColor deepskyblue
+    }
+}
+</style>
+
+:Incoming GET /answer request<
+
+if (token is valid) then (<color:red>**no**)
+    #pink:Error>
+    kill
+else (<color:green>**yes**)
+endif
+
+if (collections are specified) then (<color:red>**no**)
+    :Will be using all\navailable collections;
+else (<color:green>**yes**)
+endif
+
+if (collections are empty) then (<color:green>**yes**)
+    #pink:Error>
+    kill
+else (<color:red>**no**)
+endif
+
+if (query is in English) then (<color:red>**no**)
+    :Detect source language\nand translate query|
+else (<color:green>**yes**)
+endif
+
+:Get query embedding|
+
+:Retrieve canned replies|
+
+if (most relevant canned reply\npasses relevance threshold) then (<color:red>**no**)
+    :Retrieve most relevant\nchunks of text|
+    :Generate answer based\non most relevant chunks|
+else (<color:green>**yes**)
+    :Use most relevant\ncanned reply as\nan answer;
+endif
+
+if (source language is English) then (<color:red>**no**)
+    :Translate answer back\nto source language|
+else (<color:green>**yes**)
+endif
+
+#palegreen:Return answer>
+
+@enduml
