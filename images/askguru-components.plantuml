@@ -1,0 +1,53 @@
+@startuml
+
+skinparam database {
+    BackgroundColor deepskyblue
+    BorderColor black
+    FontColor automatic
+}
+
+skinparam node {
+    BackgroundColor 15BE6C
+    BorderColor black
+}
+
+package "Local Deployment" {
+    node "Backend"
+    note top: Webserver which handles requests\nand glues everything together
+
+    node "CoreML"
+    note bottom: Creates embeddings of texts,\nprovides answers based on\nretrieved information, and\ngenerates summaries
+
+    database "MongoDB"
+    note bottom: Stores requests logs\nand client-side events
+
+    database "Milvus"
+    note bottom: Stores chunks of text\nand their embeddings\nfor similarity search
+
+    component "Mongo\nExpress"
+    note top: Web GUI for\nMongo administration
+
+    component "Attu"
+    note right: Web GUI for\nMilvus administration
+
+    component "Redash"
+    note top: Displays logs and events\nin beautiful charts
+
+    component "Nginx"
+    note right: Acts as a reverse proxy and\nmanages SSL certificates
+}
+
+node "Chat\nPop-up"
+note left: App which embeds into websites\nand provides Q&A over docs
+
+[Chat\nPop-up] .. [Nginx]
+:API Consumers: .. [Nginx]
+[Nginx] -- [Backend]
+[Backend] -- [CoreML]
+[Backend] -- [MongoDB]
+[Backend] -- [Milvus]
+[Redash] -- [MongoDB]
+[Mongo\nExpress] -- [MongoDB]
+[Attu] -- [Milvus]
+
+@enduml
