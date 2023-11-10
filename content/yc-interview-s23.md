@@ -6,7 +6,7 @@ date: 2023-06-03
 May 26th at 9PM PST was the latest day when YC could've invited us for an interview.
 We lost any hope a week before that date because it was already almost 2 months since we applied, so we were pretty surprised to receive an invite at 3PM May 26:
 
-![](/images/yc-interview-s23-invite.png)
+![](./images/yc-interview-s23-invite.png)
 
 ## Preparation
 
@@ -90,7 +90,7 @@ Here are some of the questions that we've remembered and our approximate answers
 
 There also was some additional back and forth on the market and scaling strategy, but we don't exactly remember. It took 18 mins and ended with mixed feelings. After a few hours of waiting we received a rejection letter:
 
-![](/images/yc-interview-s23-reject.png)
+![](./images/yc-interview-s23-reject.png)
 
 ## Reflection
 
