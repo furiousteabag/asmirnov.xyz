@@ -11,6 +11,11 @@ skinparam node {
     BorderColor black
 }
 
+
+
+node "Chat\nPop-up"
+note left: App which embeds into websites\nand provides Q&A over docs
+
 package "Local Deployment" {
     node "Backend"
     note top: Webserver which handles requests\nand glues everything together
@@ -28,17 +33,18 @@ package "Local Deployment" {
     note top: Web GUI for\nMongo administration
 
     component "Attu"
-    note right: Web GUI for\nMilvus administration
+    note left: Web GUI for\nMilvus administration
 
     component "Redash"
     note top: Displays logs and events\nin beautiful charts
 
     component "Nginx"
-    note right: Acts as a reverse proxy and\nmanages SSL certificates
+    note left: Acts as a reverse proxy and\nmanages SSL certificates
 }
 
-node "Chat\nPop-up"
-note left: App which embeds into websites\nand provides Q&A over docs
+cloud "OpenAI\nCompletions" as OpenAI
+
+cloud "AWS\nTranslations" as AWS
 
 [Chat\nPop-up] .. [Nginx]
 :API Consumers: .. [Nginx]
@@ -48,6 +54,8 @@ note left: App which embeds into websites\nand provides Q&A over docs
 [Backend] -- [Milvus]
 [Redash] -- [MongoDB]
 [Mongo\nExpress] -- [MongoDB]
+[ML] -- [OpenAI]
 [Attu] -- [Milvus]
+[Backend] -- [AWS]
 
 @enduml
