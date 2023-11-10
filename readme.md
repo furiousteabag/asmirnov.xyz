@@ -1,16 +1,16 @@
 # asmirnov.xyz
 
-1. Edit `.md` files in `./content`
+1. Edit `.md` files in `./content/` folder
 2. Build them into `.html` to `./out/` folder
 
-```bash
-./build.sh
-```
+   ```bash
+   ./build.sh
+   ```
 
-Build dependencies:
+   Build dependencies:
 
-```bash
-sudo pacman -S pandoc plantuml graphviz
-```
+   ```bash
+   sudo pacman -S pandoc plantuml graphviz
+   ```
 
 3. Serve `./out/` folder with any web server
