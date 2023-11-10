@@ -11,40 +11,44 @@ skinparam node {
     BorderColor black
 }
 
-
+skinparam note {
+    BackgroundColor ffffff
+    FontColor 00000080
+    BorderColor 00000080
+}
 
 node "Chat\nPop-up"
 note left: App which embeds into websites\nand provides Q&A over docs
 
+cloud "OpenAI\nCompletions" as OpenAI
+
+cloud "AWS\nTranslations" as AWS
+
 package "Local Deployment" {
+    component "Nginx"
+    note right: Acts as a reverse proxy and\nmanages SSL certificates
+
     node "Backend"
-    note top: Webserver which handles requests\nand glues everything together
+    note right: Webserver which handles requests\nand glues everything together
 
     node "ML"
     note bottom: Creates embeddings of texts,\nprovides answers based on\nretrieved information, and\ngenerates summaries
 
     database "MongoDB"
-    note bottom: Stores requests logs\nand client-side events
+    note right: Stores requests logs\nand client-side events
 
     database "Milvus"
-    note bottom: Stores chunks of text\nand their embeddings\nfor similarity search
+    note top: Stores chunks of text\nand their embeddings\nfor similarity search
 
     component "Mongo\nExpress"
-    note top: Web GUI for\nMongo administration
+    note bottom: Web GUI for\nMongo administration
 
     component "Attu"
-    note left: Web GUI for\nMilvus administration
+    note bottom: Web GUI for\nMilvus administration
 
     component "Redash"
-    note top: Displays logs and events\nin beautiful charts
-
-    component "Nginx"
-    note left: Acts as a reverse proxy and\nmanages SSL certificates
+    note bottom: Displays logs and events\nin beautiful charts
 }
-
-cloud "OpenAI\nCompletions" as OpenAI
-
-cloud "AWS\nTranslations" as AWS
 
 [Chat\nPop-up] .. [Nginx]
 :API Consumers: .. [Nginx]
@@ -52,10 +56,10 @@ cloud "AWS\nTranslations" as AWS
 [Backend] -- [ML]
 [Backend] -- [MongoDB]
 [Backend] -- [Milvus]
-[Redash] -- [MongoDB]
-[Mongo\nExpress] -- [MongoDB]
+[MongoDB] -- [Redash]
+[MongoDB] -- [Mongo\nExpress]
 [ML] -- [OpenAI]
-[Attu] -- [Milvus]
+[Milvus] -- [Attu]
 [Backend] -- [AWS]
 
 @enduml
