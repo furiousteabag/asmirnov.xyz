@@ -15,7 +15,7 @@ package "Local Deployment" {
     node "Backend"
     note top: Webserver which handles requests\nand glues everything together
 
-    node "CoreML"
+    node "ML"
     note bottom: Creates embeddings of texts,\nprovides answers based on\nretrieved information, and\ngenerates summaries
 
     database "MongoDB"
@@ -43,7 +43,7 @@ note left: App which embeds into websites\nand provides Q&A over docs
 [Chat\nPop-up] .. [Nginx]
 :API Consumers: .. [Nginx]
 [Nginx] -- [Backend]
-[Backend] -- [CoreML]
+[Backend] -- [ML]
 [Backend] -- [MongoDB]
 [Backend] -- [Milvus]
 [Redash] -- [MongoDB]
