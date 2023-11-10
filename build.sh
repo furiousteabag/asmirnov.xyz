@@ -6,8 +6,8 @@ rm -rf $OUTPUT && mkdir -p $OUTPUT
 
 cp ./index.html $OUTPUT
 
-cp -r ./images $OUTPUT
-find $OUTPUT/images -type f -name "*.puml" -o -name "*.plantuml" \
+cp -r ./public/. $OUTPUT
+find $OUTPUT -type f -name "*.puml" -o -name "*.plantuml" \
     -exec plantuml -tsvg {} \;
 
 for FILE in ./content/*.md; do
