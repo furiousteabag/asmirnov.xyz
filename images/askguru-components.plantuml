@@ -56,10 +56,10 @@ package "Local Deployment" {
 [Backend] -- [ML]
 [Backend] -- [MongoDB]
 [Backend] -- [Milvus]
-[MongoDB] -- [Redash]
-[MongoDB] -- [Mongo\nExpress]
+[Backend] -- [AWS]
 [ML] -- [OpenAI]
 [Milvus] -- [Attu]
-[Backend] -- [AWS]
+[MongoDB] -- [Mongo\nExpress]
+[MongoDB] -- [Redash]
 
 @enduml
