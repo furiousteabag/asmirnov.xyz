@@ -32,7 +32,7 @@ package "Local Deployment" {
     note right: Webserver which handles requests\nand glues everything together
 
     node "ML"
-    note bottom: Creates embeddings of texts,\nprovides answers based on\nretrieved information, and\ngenerates summaries
+    note bottom: Creates texts embeddings,\nprovides answers based on\nretrieved information, and\ngenerates summaries
 
     database "MongoDB"
     note right: Stores requests logs\nand client-side events
