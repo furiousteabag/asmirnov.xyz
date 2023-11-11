@@ -14,6 +14,8 @@ for FILE in ./content/*.md; do
     FILENAME=$(basename -- "$FILE" .md)
     pandoc $FILE --template=./utils/content-template.html \
         --lua-filter=./utils/header-links.lua \
-        --toc --toc-depth=3 \
+        --toc \
         -o "$OUTPUT/$FILENAME.html"
+    sed -i 's/<sup>\(.*\)<\/sup>/[\1]/g' "$OUTPUT/$FILENAME.html"
+    sed -i ':a;N;$!ba;s/\(<a[^>]*class="footnote-back"[^>]*>[^<]*<\/a>\)/ | \1/g' "$OUTPUT/$FILENAME.html"
 done
