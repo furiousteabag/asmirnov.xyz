@@ -3,6 +3,16 @@ title: none
 date: none
 ---
 
+## Converging to the idea
+
+Applying tools like ChatGPT to customer support was a pretty obvious idea. It promised to benefit both customers using self-service FAQs and agents by speeding up responses and reducing the need for first-line support. So, we started digging in.
+
+We developed a prototype and reached out to industry experts for feedback. This eventually led us to [LiveChat incubator](https://incubator.text.com/){target="\_blank"} where LiveChat agents tested our agent assistant tool (this tool later became an [app on the LiveChat marketplace](https://www.livechat.com/marketplace/apps/askguru/){target="\_blank"}). From these tests it became clear that leveraging internal documents and previous chats improves the chatbot's ability to respond accurately without involving an agent. It worked great for answering straightforward questions like "What's the maximum file size for upload?" but at the same time it struggled with action-oriented queries such as "I want to cancel my subscription.". Overall, we looked at this experiment as a positive sign and started thinking about our unique edge.
+
+Looking at AI customer support competitors like [Yuma](https://yuma.ai/){target="\_blank"}, [OpenSight](https://www.ycombinator.com/companies/opensight){target="\_blank"}, [Parabolic](https://www.growparabolic.com/){target="\_blank"}, we noticed that everyone was targeting end clients — teams responsible for customer support, individual merchants, or outsourcing companies. Howewer, we felt that this approach have a downside: most clients were already using customer support software like Zendesk, Intercom, and a long tail of smaller ones which meanth we should create numerous integrations similar to our LiveChat collaboration. But large software providers would inevitably introduce native AI features, which would always outperform non-native marketplace apps. Indeed, we saw signs that LiveChat was developing its own AI solutions ^[[LiveChat existing and upcoming AI features (livechat.com)](https://www.livechat.com/features/ai/){target="\_blank"}], making us realize that our marketplace app might eventually become redundant over time.
+
+This realization led us to a hypothesis that was driving the development of AskGuru for these months: **SMBs in the Customer support and Knowledge Management software development fields, who have the resources but lack the engineering capacity, would prefer to buy ready-to-use AI tools rather than develop them in-house**. We believed it was crucial for these smaller CS/KMS providers to integrate ChatGPT-powered features immediately for automatic Q&A, dialogue summarization, semantic retrieval, and more. This urgency comes from observing major players like Intercom, Zendesk, and Zoho rapidly incorporating AI into their offerings ^[[Revolutionizing CS/CX: Market overview (askguru.ai/blog)](https://www.askguru.ai/blog/revolutionizing-cs-cx-a-deep-dive-into-the-ai-capabilities-of-leading-cs-cx-software-providers){target="\_blank"}], with smaller companies likely to follow suit.
+
 ## Tech details
 
 The main value proposition of AskGuru is Q&A over PDFs, crawled websites, markdown, and plain text files. We've enhanced this with several features:
