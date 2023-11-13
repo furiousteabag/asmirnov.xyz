@@ -13,6 +13,27 @@ Looking at AI customer support competitors like [Yuma](https://yuma.ai/){target=
 
 This realization led us to a hypothesis that was driving the development of AskGuru for these months: **SMBs in the Customer support and Knowledge Management software development fields, who have the resources but lack the engineering capacity, would prefer to buy ready-to-use AI tools rather than develop them in-house**. We believed it was crucial for these smaller CS/KMS providers to integrate ChatGPT-powered features immediately for automatic Q&A, dialogue summarization, semantic retrieval, and more. This urgency comes from observing major players like Intercom, Zendesk, and Zoho rapidly incorporating AI into their offerings ^[[Revolutionizing CS/CX: Market overview (askguru.ai/blog)](https://www.askguru.ai/blog/revolutionizing-cs-cx-a-deep-dive-into-the-ai-capabilities-of-leading-cs-cx-software-providers){target="\_blank"}], with smaller companies likely to follow suit.
 
+
+## Building in the AI space
+
+Situation when the product is not gaining much traction is not unique in any sense. It's often a good time to pause, reflect on learnings, and maybe pivot. But here's the thing: I'm not keen on continuing to develop a product where OpenAI API lies as the core.
+
+Half a year ago I was convinced that building additional features around powerful foundation AI model is a viable strategy. Howewer, OpenAI's recent updates ^[[New models and developer products announced at DevDay (openai.com/blog)](https://openai.com/blog/new-models-and-developer-products-announced-at-devday){target="\_blank"}] ^[[Introducing GPTs (openai.com/blog)](https://openai.com/blog/introducing-gpts){target="\_blank"}] including the [Assistants API](https://platform.openai.com/docs/assistants/overview){target="\_blank"} with [RAG](https://platform.openai.com/docs/assistants/tools/knowledge-retrieval){target="\_blank"}, [history thread management](https://platform.openai.com/docs/assistants/how-it-works/managing-threads-and-messages){target="\_blank"} and [code interpreter](https://platform.openai.com/docs/assistants/tools/code-interpreter){target="\_blank"} show that they're aiming to be more than just a provider of foundation models. They're willing to be an all-in-one AI development platform. This shift makes it risky to have their API as the backbone of a product, because there's always the chance OpenAI might add features which makes my product obsolete.
+
+A common strategy for creating a unique selling point is collecting client data to fine-tune custom models, creating a so-called "data flywheel". For me it is hard to agree with that because no company wants their data used as training material for a model that'll eventually serve their competitors. This means that I will end up fine-tuning models for each client with their data, which isn't scalable and involves a lot of manual work. That means that everything I need is a single Q&A RAG model, finetuned to utilize context and follow specific output format. Such model could be finetuned on a synthetic datasets from GPT4 outputs without a need of a flywheels.
+
+An even bigger question is whether local models are necessary at all when OpenAI's models are so efficient. In our interviews, we've often heard companies express concerns about using OpenAI's API, fearing it might compromise their clients' data. These companies generally fall into three categories:
+
+1. Those who simply don't need or want AI.
+
+2. Those who don't trust OpenAI API but trust established providers like [Azure OpenAI Service](https://azure.microsoft.com/en-in/products/ai-services/openai-service){target="\_blank"}.
+
+3. Companies in sectors like banking, insurance, or consulting. Many haven't moved to cloud computing and rely on their own data centers. For them, the return on investment for AI features like Q&A and summarization isn't clear, given the need for significant CPU, RAM, or GPU resources.
+
+Given that, I don't think any local models are needed in a customer support space.
+
+Generally, AI has become too commoditized to be the central feature of a product. It's now just another tool, like a database or cloud service. It is especially sad for me as a Machine Learning engineer!
+
 ## Tech details
 
 The main value proposition of AskGuru is Q&A over PDFs, crawled websites, markdown, and plain text files. We've enhanced this with several features:
