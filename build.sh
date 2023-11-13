@@ -14,6 +14,7 @@ for FILE in ./content/*.md; do
     FILENAME=$(basename -- "$FILE" .md)
     pandoc $FILE --template=./utils/content-template.html \
         --lua-filter=./utils/header-links.lua \
+        --lua-filter=./utils/date-format.lua \
         --toc \
         -o "$OUTPUT/$FILENAME.html"
     sed -i 's/<sup>\(.*\)<\/sup>/[\1]/g' "$OUTPUT/$FILENAME.html"
