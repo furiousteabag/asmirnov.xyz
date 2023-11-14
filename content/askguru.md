@@ -3,9 +3,13 @@ title: none
 date: none
 ---
 
+Almost a year ago, a month after ChatGPT was released, me and my friend began working on [AskGuru](https://askguru.ai/){target="\_blank"}: an AI toolkit designed for customer support software providers. Essentially, it's a collection of easy-to-integrate tools that enable these providers to incorporate AI features such as Q&A over documents and chats, summarization, and semantic search into various aspects of their product, whether it's a customer-facing chatbot or a copilot tool for agents.
+
+Recently, my co-founder left to join another company, so I thought it would be a great time to look back and reflect on what we did and what we learned building [AI startup in 2023](./images/askguru-ai-startup.png){target="\_blank"}.
+
 ## Converging to the idea
 
-Applying tools like ChatGPT to customer support was a pretty obvious idea. It promised to benefit both customers using self-service FAQs and agents by speeding up responses and reducing the need for first-line support. So, we started digging in.
+Applying ChatGPT to customer support was a pretty obvious idea. It promised to benefit both customers using self-service FAQs and agents by speeding up responses and reducing the need for first-line support. So, we started digging in.
 
 We developed a prototype and reached out to industry experts for feedback. This eventually led us to [LiveChat incubator](https://incubator.text.com/){target="\_blank"} where LiveChat agents tested our agent assistant tool (this tool later became an [app on the LiveChat marketplace](https://www.livechat.com/marketplace/apps/askguru/){target="\_blank"}). From these tests it became clear that leveraging internal documents and previous chats improves the chatbot's ability to respond accurately without involving an agent. It worked great for answering straightforward questions like "What's the maximum file size for upload?" but at the same time it struggled with action-oriented queries such as "I want to cancel my subscription.". Overall, we looked at this experiment as a positive sign and started thinking about our unique edge.
 
