@@ -38,6 +38,13 @@ Given that, I don't think any local models are needed in a customer support spac
 
 Generally, AI has become too commoditized to be the central feature of a product. It's now just another tool, like a database or cloud service. It is especially sad for me as a Machine Learning engineer!
 
+## Rant about chatbots
+
+It could be worth continue trying to find unique edge and developing a product that stands out from those quickly built on the OpenAI stack. However, I realized that I don't have a strong passion for customer support as a whole. In my entire life, I've never had a case where a bot actually solved my problem. Either I managed to find the information or take the action myself (like changing a delivery address), or my request was so specific that it wasn't covered by scripts or documentation and needed a real person's help.
+
+While working on AskGuru, I've come to believe that the existence of chatbots for information and actions is more about poor UX/UI and the absence of a solid search engine like [Algolia](https://www.algolia.com/){target="\_blank"}. The real value in a chat popup, in my view, is the live agent. They can do things and access info not readily available to users, like escalating technical bugs or handling complaints and disputes.
+
+
 ## Tech details
 
 The main value proposition of AskGuru is Q&A over PDFs, crawled websites, markdown, and plain text files. We've enhanced this with several features:
