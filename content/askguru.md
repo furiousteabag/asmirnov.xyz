@@ -44,6 +44,13 @@ It could be worth continue trying to find unique edge and developing a product t
 
 While working on AskGuru, I've come to believe that the existence of chatbots for information and actions is more about poor UX/UI and the absence of a solid search engine like [Algolia](https://www.algolia.com/){target="\_blank"}. The real value in a chat popup, in my view, is the live agent. They can do things and access info not readily available to users, like escalating technical bugs or handling complaints and disputes.
 
+## Closing thoughts
+
+For me, the effort I put into something is directly linked to the sense of belonging to the project I am working on. When running a startup this feeling is extreme, and I really enjoyed working at full capacity most of the time.
+
+Another great thing I discovered about being a founder is that there is nobody to blame. I hate when people, including myself, use [external attribution](<https://en.wikipedia.org/wiki/Attribution_(psychology)#External>){target="\_blank"} to justify failures. This was a common frustration in my corporate job, where policies, directions, choices, and people were often beyond my influence. But in a startup, there's literally no one else to blame. It's me who chose the industry, the clients, partners, and investors. At the end of the day, I'm solely responsible for the product's success or failure.
+
+For now, I'll continue supporting our existing users and explore what I can work on next.
 
 ## Tech details
 
