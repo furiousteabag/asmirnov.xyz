@@ -48,7 +48,7 @@ While working on AskGuru, I've come to believe that the existence of chatbots fo
 
 The main thing I'd change at the start is to have more interviews with actual users of the product we planned (like support agents and chatbot users), rather than just customers (in our case, those who provide customer support or knowledge management software). Gaining insights from real users helps in understanding ROI for the planned solution and shaping the offering to match real product value, not just vague customer expectations. It could even prevent us from working on a stillborn product earlier. And, I should've read [The Mom Test](https://www.momtestbook.com/){target="\_blank"} before diving into heavy interviewing.
 
-Another aspect I'd focus on is the market size. When we narrowed down to selling to SMBs, we didn't properly research the market. For a while, this didn't bother us, but when we reached every potential customer out there it turned out that the market wasn't as large as we hoped ^[About 200 active companies with an $2M ARR, resulting in a $400M market].
+Another aspect I'd focus on is the market size. When we narrowed down to selling to SMBs, we didn't properly research the market. For a while, this didn't bother us, but as we reached every potential customer out there it turned out that the market wasn't as large as we hoped ^[About 200 active companies with an $2M ARR, resulting in a $400M market].
 
 We spent a lot of time on unproductive back-and-forth communication and free pilots. In hindsight, implementing paid pilots might have helped us understand real demand faster and filter out those who didn't need our product.
 
