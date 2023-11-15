@@ -17,6 +17,23 @@ Looking at AI customer support competitors like [Yuma](https://yuma.ai/){target=
 
 This realization led us to a hypothesis that was driving the development of AskGuru for these months: **SMBs in the Customer support and Knowledge Management software development fields, who have the resources but lack the engineering capacity, would prefer to buy ready-to-use AI tools rather than develop them in-house**. We believed it was crucial for these smaller CS/KMS providers to integrate ChatGPT-powered features immediately for automatic Q&A, dialogue summarization, semantic retrieval, and more. This urgency comes from observing major players like Intercom, Zendesk, and Zoho rapidly incorporating AI into their offerings ^[[Revolutionizing CS/CX: Market overview (askguru.ai/blog)](https://www.askguru.ai/blog/revolutionizing-cs-cx-a-deep-dive-into-the-ai-capabilities-of-leading-cs-cx-software-providers){target="\_blank"}], with smaller companies likely to follow suit.
 
+## Why it didn't work out as expected
+
+We didn't gain as much traction as we hoped for several reasons:
+
+1. We weren't solving a burning business problem
+
+   I often come across bold statements on LinkedIn like "In the future, businesses will be divided into two categories: those who have embraced AI, and those who have fallen behind". This might give the impression that every SaaS company is rushing to integrate AI into their products. However, from what we've seen, this isn't the case. The majority of SMBs in customer support and knowledge management software are still focused on their pre-AI boom roadmaps. Some have non-urgent plans to experiment with AI, perhaps integrating basic features like summarization or adjusting the tone of voice, but there's no sense of urgency or rush.
+
+2. ROI of embedding AI features in unclear
+
+   It's tough to quantify the benefits of adding AI features like dialogue summaries for agents or enhanced Q&A support. And when you consider the need to replicate and update client data to a third-party service, it becomes even more uncertain if this direction is worth pursuing.
+
+3. Software providers prefer compherensive, end-to-end solutions over toolkits
+
+   What we figured out via top-down selling is that SaaS companies in our space prefer having a complete solution – like a chat popup or a WhatsApp bot – rather than a set of building blocks. A better strategy is to develop a full-fledged product with clear value for the end-user (like a chat popup) and use providers as white-labeled distribution partners, rather than trying to convince them to build on our stack.
+
+One more thing we noticed is that by reaching out and offering our toolkit, considering the issues mentioned above, we ended up looking almost identical to those companies that regularly spam my email and LinkedIn with software development outsourcing offers. And I didn't like that.
 
 ## Building in the AI space
 
