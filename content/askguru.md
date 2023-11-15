@@ -44,6 +44,16 @@ It could be worth continue trying to find unique edge and developing a product t
 
 While working on AskGuru, I've come to believe that the existence of chatbots for information and actions is more about poor UX/UI and the absence of a solid search engine like [Algolia](https://www.algolia.com/){target="\_blank"}. The real value in a chat popup, in my view, is the live agent. They can do things and access info not readily available to users, like escalating technical bugs or handling complaints and disputes.
 
+## What I would do different next time
+
+The main thing I'd change at the start is to have more interviews with actual users of the product we planned (like support agents and chatbot users), rather than just customers (in our case, those who provide customer support or knowledge management software). Gaining insights from real users helps in understanding ROI for the planned solution and shaping the offering to match real product value, not just vague customer expectations. It could even prevent us from working on a stillborn product earlier. And, I should've read [The Mom Test](https://www.momtestbook.com/){target="\_blank"} before diving into heavy interviewing.
+
+Another aspect I'd focus on is the market size. When we narrowed down to selling to SMBs, we didn't properly research the market. For a while, this didn't bother us, but when we reached every potential customer out there it turned out that the market wasn't as large as we hoped ^[About 200 active companies with an $2M ARR, resulting in a $400M market].
+
+We spent a lot of time on unproductive back-and-forth communication and free pilots. In hindsight, implementing paid pilots might have helped us understand real demand faster and filter out those who didn't need our product.
+
+Sometimes, we got distracted and started exploring adjacent areas, like providing software for BPO outsourcing companies or even developing an education platform. However, I didn’t find this helpful. It pulled the focus away from our main business, preventing us from either developing it further or realizing that it wasn’t worth pursuing at all.
+
 ## Closing thoughts
 
 For me, the effort I put into something is directly linked to the sense of belonging to the project I am working on. When running a startup this feeling is extreme, and I really enjoyed working at full capacity most of the time.
