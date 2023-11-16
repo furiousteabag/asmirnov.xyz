@@ -142,4 +142,6 @@ From my perspective, the vector databases field currently seems more focused on 
 
 We've decided to share the code we wrote, hoping it might be useful to someone someday:
 
+- [Backend service (github.com/askguruai)](https://github.com/askguruai/backend){target="\_blank"}
+- [ML service (github.com/askguruai)](https://github.com/askguruai/coreml){target="\_blank"}
 - [Chat popup client (github.com/askguruai)](https://github.com/askguruai/chat-popup){target="\_blank"}
