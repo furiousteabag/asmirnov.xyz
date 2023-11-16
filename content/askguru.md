@@ -17,6 +17,24 @@ Looking at AI customer support competitors like [Yuma](https://yuma.ai/){target=
 
 This realization led us to a hypothesis that was driving the development of AskGuru for these months: **SMBs in the Customer support and Knowledge Management software development fields, who have the resources but lack the engineering capacity, would prefer to buy ready-to-use AI tools rather than develop them in-house**. We believed it was crucial for these smaller CS/KMS providers to integrate ChatGPT-powered features immediately for automatic Q&A, dialogue summarization, semantic retrieval, and more. This urgency comes from observing major players like Intercom, Zendesk, and Zoho rapidly incorporating AI into their offerings ^[[Revolutionizing CS/CX: Market overview (askguru.ai/blog)](https://www.askguru.ai/blog/revolutionizing-cs-cx-a-deep-dive-into-the-ai-capabilities-of-leading-cs-cx-software-providers){target="\_blank"}], with smaller companies likely to follow suit.
 
+## Approaching the market
+
+We began with a top-down approach, reaching out to CEOs considering integrating AI into their existing products, CPOs to quickly test their AI product hypotheses with us, and CTOs, suggesting they use our services instead of developing AI features internally. Our primary outreach tool was LinkedIn, and we did everything manually.
+
+At one point, we experimented by embedding a Q&A demo on prospective clients' websites, but it didn't really impact our conversion rates. Numbers broke down like this:
+
+|                 | total companies at stage | % of total reached | % conversion from previous stage |
+| :-------------: | :----------------------: | :----------------: | :------------------------------: |
+|   **reached**   |           484            |      100.00%       |               N/A                |
+|   **replied**   |            89            |       18.39%       |              18.39%              |
+| **had a call**  |            24            |       4.96%        |              26.97%              |
+| **had a pilot** |            10            |       2.07%        |              41.67%              |
+|  **customer**   |            2             |       0.41%        |              20.00%              |
+
+On average, we reached 1.95 people within each organization.
+
+We also got involved in the [Pioneer acceleration program](https://pioneer.app/) ^[[Pioneer companies announcement (pioneer.app/blog)](https://pioneer.app/blog/july-2023/){target="\_blank"}] and spent a great month in San Francisco as well as landed a YC Interview for S23 batch but it didn't worked out ^[[YC S23 Interview Experience (asmirnov.xyz)](https://asmirnov.xyz/yc-interview-s23){target="\_blank"}].
+
 ## Why it didn't work out as expected
 
 We didn't gain as much traction as we hoped for several reasons:
