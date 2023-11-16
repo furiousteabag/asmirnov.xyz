@@ -1,5 +1,5 @@
 ---
-title: Writing Great Cold Emails with Kevin Ramani
+title: Writing great cold emails with Kevin Ramani
 date: 2023-06-04
 ---
 

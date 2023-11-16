@@ -1,5 +1,5 @@
 ---
-title: YC Interview Experience
+title: YC interview experience
 date: 2023-06-03
 ---
 
