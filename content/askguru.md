@@ -137,3 +137,9 @@ We used Milvus for storing vector embeddings. We enjoyed working with their Pyth
 Despite my positive experience with Milvus, I'm inclined not to use any vector database for my next project. The sole feature I require from a vector database is indexing for quick retrieval, and I don't see the need to manage an entire separate database just for this one functionality. Instead, I'm considering some extensions to existing, established databases like those available for PostgreSQL ^[[pgvector: Open-source vector similarity search for Postgres (github.com/pgvector)](https://github.com/pgvector/pgvector){target="\_blank"}] ^[[Lantern: open-source PostgreSQL database extension to store vector data, generate embeddings, and handle vector search operations (github.com/lanterndata)](https://github.com/lanterndata/lantern){target="\_blank"}].
 
 From my perspective, the vector databases field currently seems more focused on marketing tactics (like which database OpenAI uses in their sample notebooks ^[[Fine-Tuning for Retrieval Augmented Generation (RAG) with Qdrant (cookbook.openai.com)](https://cookbook.openai.com/examples/fine-tuned_qa/ft_retrieval_augmented_generation_qdrant){target="\_blank"}]), connectors to outer world (such as SDKs ^[[Qdrant vs Pinecone (qdrant.tech/documentation)](https://qdrant.tech/documentation/overview/qdrant-alternatives/#supported-technologies){target="\_blank"}]), and tutorials for a quick start, rather than an actual competition of quality and speed. Given the additional overhead of integrating a new database for just a single vector indexing feature, and considering the presence of traditional databases like PostgreSQL, which I plan to use anyway, the value proposition just isn't there for me.
+
+### Open sourcing the work
+
+We've decided to share the code we wrote, hoping it might be useful to someone someday:
+
+- [Chat popup client (github.com/askguruai)](https://github.com/askguruai/chat-popup){target="\_blank"}
