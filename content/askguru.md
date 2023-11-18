@@ -1,6 +1,6 @@
 ---
 title: The story of failing AI startup in 2023
-date: none
+date: 2023-11-16
 ---
 
 Almost a year ago, a month after ChatGPT was released, I and my friend began working on [AskGuru](https://askguru.ai/){target="\_blank"}: an AI toolkit designed for customer support software providers. Essentially, it's a collection of easy-to-integrate tools that enable these providers to incorporate AI features such as Q&A over documents and chats, summarization, and semantic search into various aspects of their product, whether it's a customer-facing chatbot or a copilot tool for agents.
@@ -122,7 +122,7 @@ These components interact as shown here:
 
 ![](./images/askguru-components.svg)
 
-We self-host everything on standard VMs across AWS, Vultr, and GCP, using docker-compose. We don't use services like Managed Databases or Cloud Run offered by cloud providers because it makes us feel bounded to specific provider. It paid off when our GCP credits ^[[Google for Startups (cloud.google.com/startup)](https://cloud.google.com/startup){target="\_blank"}] ran out and we were able to move everything to AWS within an hour, thanks to the credits we had from [NVIDIA Inception program](https://www.nvidia.com/startups/){target="\_blank"}). While self-hosting raises questions about database backups and microservice scalability, our relatively low request volume (averaging 100/day) has meant these are not immediate concerns.
+We self-host everything on standard VMs across AWS, Vultr, and GCP, using docker-compose. We don't use services like Managed Databases or Cloud Run offered by cloud providers because it makes us feel bounded to specific provider. It paid off when our GCP credits ^[[Google for Startups (cloud.google.com/startup)](https://cloud.google.com/startup){target="\_blank"}] ran out and we were able to move everything to AWS within an hour, thanks to the credits we had from [NVIDIA Inception program](https://www.nvidia.com/startups/){target="\_blank"}. While self-hosting raises questions about database backups and microservice scalability, our relatively low request volume (averaging 100/day) has meant these are not immediate concerns.
 
 ### Flow of handling a user request
 
