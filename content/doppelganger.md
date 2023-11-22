@@ -15,3 +15,56 @@ So, the plan is:
 
 1. Start with LoRA on top of Dolphin, the English chat fine-tuned Mistral
 2. If quality not sufficient, try full fine-tune on Mistral
+
+## Data preparation
+
+One unique aspect of messaging in apps like Telegram, compared to emails, is the conversational flow. Messages don't usually alternate one-by-one between you and your contact. Instead, you often find yourself sending a couple of messages in a row, followed by several responses from the other person. These messages are generally short, too. I wanted to preserve this natural conversational style in my data.
+
+Telegram offers a [built-in feature](https://telegram.org/blog/export-and-more){target="\_blank"} to export all chats into JSON. After some filtering and grouping messages into sessions, I've compiled data from the last two years of using Telegram. This resulted in 7,851 sessions from 317 chats, with an average session length of 8.7 messages. For structuring the data, I've chosen the [ChatML](https://github.com/openai/openai-python/blob/284c1799070c723c6a553337134148a7ab088dd8/chatml.md){target="\_blank"} prompt format. Here’s a sample session (translated from Russian):
+
+<|im_start|>John Smith<br />
+**>>> damn, can't get around the 135 time limit**<br />
+**>>> trying to do everything super optimally, but no luck<|im_end|>**<br />
+<|im_start|>Alexander Smirnov<br />
+**>>> yeah same**<br />
+**>>> you still going with the same idea?<|im_end|>**<br />
+<|im_start|>John Smith<br />
+**>>> dunno, I think we're on the same page**<br />
+**>>> as you said**<br />
+**>>> going with the reversed string in a try and trying to find something there**<br />
+**>>> seems like real shit because z function ruins everything........................<|im_end|>**<br />
+<|im_start|>Alexander Smirnov<br />
+**>>> don't get where z comes into this<|im_end|>**<br />
+<|im_start|>John Smith<br />
+**>>> dunno seems like I'm doing everything iteratively anyway, but yeah gotta reverse some strings to build the z function**<br />
+**>>> and it's just a random solution**<br />
+**>>> from discussions<|im_end|>**<br />
+<|im_start|>Alexander Smirnov<br />
+**>>> got it<|im_end|>**<br />
+
+<details>
+    <summary>original</summary>
+    <|im_start|>Иван Иванович<br />
+    **>>> бля не могу обойти таймлим на 135**<br />
+    **>>> пытаюсь все супер оптимально делать, но хуйтам)<|im_end|>**<br />
+    <|im_start|>Alexander Smirnov<br />
+    **>>> да вот жиза**<br />
+    **>>> ты с той же идеей?<|im_end|>**<br />
+    <|im_start|>Иван Иванович<br />
+    **>>> да хз, думаю у нас одно и тоже**<br />
+    **>>> как ты сказал**<br />
+    **>>> иду с реверснутой строкой в трай и чето пытаюсь там найти**<br />
+    **>>> походу реальная параша на z функции все руинит........................<|im_end|>**<br />
+    <|im_start|>Alexander Smirnov<br />
+    **>>> не пон где тут про z<|im_end|>**<br />
+    <|im_start|>Иван Иванович<br />
+    **>>> хз вроде все итеративно итак делаю, ну да кое где надо реверснуть строки чтобы з функцию построить**<br />
+    **>>> а это просто рандомное решение**<br />
+    **>>> с дискашенов<|im_end|>**<br />
+    <|im_start|>Alexander Smirnov<br />
+    **>>> пон<|im_end|>**<br />
+</details>
+
+My data collator ensures that the loss is only calculated based on someone's response. Predicting who will speak next is relatively straightforward, and we don't want the model to focus on learning that. Therefore, parts of the conversation where the loss is calculated are highlighted in bold.
+
+You might notice that not only my responses but also those of others are used for loss calculation. This is deliberate. By doing this, the model will be able to role-play not only as me but also as my frequent conversational partners!
