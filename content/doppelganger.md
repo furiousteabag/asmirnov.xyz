@@ -153,6 +153,18 @@ Ok, it is capable of forming coherent sentences. The most noticeable problem is 
 
 Let's try to fix all of these!
 
+## LoRA
+
+LoRA offers a low-effort approach in terms of both the training pipeline and hardware requirements. It trains around 1% of the total weights. I chose a 1024 sequence length and a batch size of 8. The training, which consumed 20GB of VRAM on an RTX 3090, took three epochs and lasted for 5.5 hours. For this, I used [vast.ai](https://vast.ai/){target="\_blank"}, where the GPU cost was $0.362 per hour, totaling $2 for the entire training, excluding time spent on experiments and bug fixes.
+
+## Full fine-tuning
+
+Full fine-tuning is more challenging due to the need for multi-GPU training. Popular methods include either [ZeRO & DeepSpeed](https://www.microsoft.com/en-us/research/blog/zero-deepspeed-new-system-optimizations-enable-training-models-with-over-100-billion-parameters/){target="\_blank"} ^[[How to Choose Which ZeRO Stage and Offloads To Use For Best Performance (huggingface.co/docs)](https://huggingface.co/docs/transformers/main_classes/deepspeed#how-to-choose-which-zero-stage-and-offloads-to-use-for-best-performance){target="\_blank"}] or [FSDP](https://engineering.fb.com/2021/07/15/open-source/fsdp/){target="\_blank"} ^[[Introducing PyTorch Fully Sharded Data Parallel (FSDP) API (pytorch.org/blog)](https://pytorch.org/blog/introducing-pytorch-fully-sharded-data-parallel-api/){target="\_blank"}], with FSDP essentially being a ZeRO3 ^[[It’s 2023. Is PyTorch’s FSDP the best choice for training large models? (openmmlab.medium.com)](https://openmmlab.medium.com/its-2023-is-pytorch-s-fsdp-the-best-choice-for-training-large-models-fe8d2848832f){target="\_blank"}]. I decided to go with FSDP.
+
+While implementing training pipeline, I reffered to the [Stanford Alpaca fine-tuning code](https://github.com/tatsu-lab/stanford_alpaca/){target="\_blank"} and [Anton Bacaj's Mistral fine-tuning code](https://github.com/abacaj/fine-tune-mistral/){target="\_blank"}.
+
+Using half-precision FSDP full shard with a 1024 sequence length and a micro batch size of 2 required 63GB of VRAM on each of the eight A100 80 GB GPUs. The training, lasting three epochs, took just 20 minutes. The total cost for the VM was $8.88 per hour, resulting in $3, not including the time for experiments and bug fixes.
+
 ## Code
 
 You can find code for this project as well as instruction of how to replicate it yourself on your own Telegram dump in [my github repo](https://github.com/furiousteabag/doppelganger){target="\_blank"}. Training logs can be accessed on [WandB](https://wandb.ai/furiousteabag/doppelganger){target="\_blank"}.
