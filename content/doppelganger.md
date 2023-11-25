@@ -71,7 +71,7 @@ You might notice that not only my responses but also those of others are used fo
 
 ## Evaluation plan
 
-I will test models by having chats in two ways. First, model will pretend to be me and I will be chatting with myself from the perspective of my different friends. Then, I'll chat as myself while the model acts as my friends. My conversation starter will always be the same 2 messages: "hey" and "what's up?" (in Russian, "прив" and "как дела?"). Generated phrases and person as the model acts who from will be **highlighted**. All conversations initially will be held in Russian and may be accessed by clicking on 'original' details button.
+I will test models by having chats in two ways. First, model will pretend to be me and I will be chatting with myself from the perspective of my different friends. Then, I'll chat as myself while the model acts as my friends. My conversation starter will always be the same 2 messages: "hey" and "what's up?" (in Russian, "прив" and "как дела?"). Generated phrases and person as the model acts who from will be **highlighted**. All conversations initially will be held in Russian and may be accessed by clicking on 'original' details button. For testing I will be using [oobabooga/text-generation-webui](https://github.com/oobabooga/text-generation-webui){target="\_blank"}.
 
 At the beginning, I want to explore how generic conversation fine-tuned Mistral model deals with that task without any prior training from my side.
 
