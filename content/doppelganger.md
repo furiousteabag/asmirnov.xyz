@@ -152,3 +152,7 @@ At the beginning, I want to explore how generic conversation fine-tuned Mistral 
 Ok, it is capable of forming coherent sentences. The most noticeable problem is its lack of awareness regarding the context of the conversations which leads to bland and generic replies. The messages lacked any distinct style, feeling quite basic. Another issue is that the model's Russian is poor. This is expected, as the model is too small to generalize well to languages other than its primary one, English. Additionally, the model tended to be overly proactive, ending almost every sentence with a question, which isn't how real people typically communicate in messengers.
 
 Let's try to fix all of these!
+
+## Code
+
+You can find code for this project as well as instruction of how to replicate it yourself on your own Telegram dump in [my github repo](https://github.com/furiousteabag/doppelganger){target="\_blank"}. Training logs can be accessed on [WandB](https://wandb.ai/furiousteabag/doppelganger){target="\_blank"}.
