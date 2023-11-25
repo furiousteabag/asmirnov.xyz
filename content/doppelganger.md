@@ -68,3 +68,87 @@ Telegram offers a [built-in feature](https://telegram.org/blog/export-and-more){
 My data collator ensures that the loss is only calculated based on someone's response. Predicting who will speak next is relatively straightforward, and we don't want the model to focus on learning that. Therefore, parts of the conversation where the loss is calculated are highlighted in bold.
 
 You might notice that not only my responses but also those of others are used for loss calculation. This is deliberate. By doing this, the model will be able to role-play not only as me but also as my frequent conversational partners!
+
+## Evaluation plan
+
+I will test models by having chats in two ways. First, model will pretend to be me and I will be chatting with myself from the perspective of my different friends. Then, I'll chat as myself while the model acts as my friends. My conversation starter will always be the same 2 messages: "hey" and "what's up?" (in Russian, "прив" and "как дела?"). Generated phrases and person as the model acts who from will be **highlighted**. All conversations initially will be held in Russian and may be accessed by clicking on 'original' details button.
+
+At the beginning, I want to explore how generic conversation fine-tuned Mistral model deals with that task without any prior training from my side.
+
+\-\-\-
+
+<details>
+    <summary>Friend 1 vs **Alexander Smirnov**</summary>
+
+    \>\>\> hey<br />
+    \>\>\> what's up?<br />
+    **>>> I'm good, what about you?**<br />
+    \>\>\> nothing much<br />
+    \>\>\> what did you do today?<br />
+    **>>> I worked.**<br />
+    **>>> then I did a few tasks in Python and studied data processing libraries.**<br />
+    **>>> in the evening I'll do wrestling training.**<br />
+    **>>> have you ever been into sports or do you have any hobbies?**<br />
+    \>\>\> I see<br />
+    \>\>\> want to watch a movie today?<br />
+    **>>> maybe, if I find the time.**<br />
+    **>>> what's your favorite music? Electronic, rock, or other genres?**
+
+</details>
+
+<details>
+    <summary>original</summary>
+
+    \>\>\> прив<br />
+    \>\>\> как дела?<br />
+    **>>> все хорошо, а у тебя что нового?**<br />
+    \>\>\> да ничего<br />
+    \>\>\> чего сегодня делал?<br />
+    **>>> я работал.**<br />
+    **>>> потом сделал несколько задач на python и изучал библиотеки для обработки данных.**<br />
+    **>>> в вечер займусь тренировкой на борцу.**<br />
+    **>>> ты когда-нибудь занимаешься спортом или имеешь какое-то хобби?**<br />
+    \>\>\> понятно<br />
+    \>\>\> посмотрим кино сегодня?<br />
+    **>>> может быть, если найдется время.**<br />
+    **>>> какая ваша любимая музыка? Электронная музыка, рок или другие жанры?**
+
+</details>
+
+\-\-\-
+
+<details>
+    <summary>Alexander Smirnov vs **Friend 1**</summary>
+
+    \>\>\> hey<br />
+    \>\>\> what's up?<br />
+    **>>> well, everything is fine so far. what's new with you?**<br />
+    >>> spent the whole day programming<br />
+    >>> what did you do today?<br />
+    **>>> finished at work**<br />
+    **>>> and did some housework, now I'm resting. are you also resting or still working?**<br />
+    >>> I'm already resting<br />
+    **>>> well, that's good. can we talk about something interesting or do you have any questions?**
+
+</details>
+
+<details>
+    <summary>original</summary>
+
+    \>\>\> прив<br />
+    \>\>\> как дела?<br />
+    **>>> ну пока все нормально. а у вас что нового?**<br />
+    \>\>\> прогал целый день<br />
+    \>\>\> чего сегодня делала?<br />
+    **>>> закончила на работе**<br />
+    **>>> и сделала немного домашней работы, теперь отдыхаю. а вы тоже отдохните или еще работаете?**<br />
+    \>\>\> я уже отдыхаю<br />
+    **>>> ну хорошо. можно поговорить о чем-нибудь интересном или вы имеете какие-то вопросы?**
+
+</details>
+
+\-\-\-
+
+Ok, it is capable of forming coherent sentences. The most noticeable problem is its lack of awareness regarding the context of the conversations which leads to bland and generic replies. The messages lacked any distinct style, feeling quite basic. Another issue is that the model's Russian is poor. This is expected, as the model is too small to generalize well to languages other than its primary one, English. Additionally, the model tended to be overly proactive, ending almost every sentence with a question, which isn't how real people typically communicate in messengers.
+
+Let's try to fix all of these!
