@@ -441,7 +441,7 @@ Here are the results:
 
 \-\-\-
 
-This is much better. It definitely captures the style of the person it's responding on behalf of. It also identifies the most common topics discussed between chatters. For example, with friend 2, the focus is clearly more on work. However, the grammar is still off, and it loses the context of the conversation quickly. I'm pretty confident that LoRA would work with reasonable quality in English, and full fine-tuning might not be necessary. But, since Russian isn't the model's native language, let's try full fine-tuning.
+This is much better. It definitely captures the style of the person it's responding on behalf of. It also identifies the most common topics discussed between specific pair of people. For example, with friend 2, the focus is clearly more on work. However, the grammar is still off, and it loses the context of the conversation quickly. I'm pretty confident that LoRA would work with reasonable quality in English, and full fine-tuning might not be necessary. But, since Russian isn't the model's native language, let's try full fine-tuning.
 
 ## Full fine-tuning
 
@@ -453,4 +453,4 @@ Using half-precision FSDP full shard with a 1024 sequence length and a micro bat
 
 ## Code
 
-You can find code for this project as well as instruction of how to replicate it yourself on your own Telegram dump in [my github repo](https://github.com/furiousteabag/doppelganger){target="\_blank"}. Training logs can be accessed on [WandB](https://wandb.ai/furiousteabag/doppelganger){target="\_blank"}.
+You can find code for this project as well as instruction of how to replicate it yourself on your own Telegram dump in [my github repo](https://github.com/furiousteabag/doppelganger){target="\_blank"}. Training logs may be accessed on [WandB](https://wandb.ai/furiousteabag/doppelganger){target="\_blank"}.
