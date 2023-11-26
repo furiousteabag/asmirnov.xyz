@@ -451,6 +451,319 @@ While implementing training pipeline, I reffered to the [Stanford Alpaca fine-tu
 
 Using half-precision FSDP full shard with a 1024 sequence length and a micro batch size of 2 required 63GB of VRAM on each of the eight A100 80 GB GPUs. The training, lasting three epochs, took just 20 minutes. The total cost for the VM was $8.88 per hour, resulting in $3, not including the time for experiments and bug fixes.
 
+Conversations:
+
+\-\-\-
+
+<details>
+    <summary>Friend 1 vs **Alexander Smirnov**</summary>
+
+    \>\>\> hey<br />
+    \>\>\> what's up?<br />
+    **>>> hey) good**<br />
+    **>>> you?**<br />
+    \>\>\> good as well<br />
+    \>\>\> what you were doing today?<br />
+    **>>> played a board game**<br />
+    **>>> I’ll go home now**<br />
+    \>\>\> nice<br />
+    \>\>\> what kind of game?<br />
+    **>>> catan**<br />
+    **>>> strategy**<br />
+    **>>> very good**<br />
+    \>\>\> who was there?<br />
+    **>>> Max Yavich and Fedya**<br />
+    \>\>\> who won?<br />
+    **>>> Max**
+
+</details>
+
+<details>
+    <summary>original</summary>
+
+    \>\>\> прив<br />
+    \>\>\> как дела?<br />
+    **>>> Прив) норм**<br />
+    **>>> а у тебя?**<br />
+    \>\>\> да тоже норм<br />
+    \>\>\> чего делал сегодня?<br />
+    **>>> играли в настолку**<br />
+    **>>> ща поеду домой**<br />
+    \>\>\> найс<br />
+    \>\>\> что за настолка?<br />
+    **>>> колонизаторы**<br />
+    **>>> стратежка**<br />
+    **>>> оч хорошая**<br />
+    \>\>\> кто был?<br />
+    **>>> Макс Явич и Федя**<br />
+    \>\>\> кто выиграл?<br />
+    **>>> Макс**
+
+</details>
+
+\-\-\-
+
+<details>
+    <summary>Friend 2 vs **Alexander Smirnov**</summary>
+
+    \>\>\> hey<br />
+    \>\>\> what's up?<br />
+    **>>> hi, good**<br />
+    **>>> let's meet in half an hour?**<br />
+    \>\>\> yep<br />
+    \>\>\> what did you want?<br />
+    **>>> damn I haven’t finished the script for recalculating models yet**<br />
+    **>>> and I need to finish it to send it to them**<br />
+    **>>> this recalculation takes a lot of time, so I just want to turn around and start doing it and not waste time on preparation**<br />
+    \>\>\> got it<br />
+    \>\>\> what is the plan for today?<br />
+    **>>> meet in half an hour to discuss what we are doing**<br />
+    **>>> if decided, then I send an application to them and wait for a response**<br />
+    **>>> if we haven’t decided, then we continue to work**<br />
+    \>\>\> who do you mean by them?<br />
+    **>>> investors**<br />
+    **>>> https://www.ycombinator.com/howtoapply**<br />
+    **>>> there are two tests)**
+
+</details>
+
+<details>
+    <summary>original</summary>
+
+    \>\>\> прив<br />
+    \>\>\> как дела?<br />
+    **>>> прив, збс**<br />
+    **>>> го кол через пол часа?**<br />
+    \>\>\> да го<br />
+    \>\>\> а чего ты хотел?<br />
+    **>>> блять я еще не доделал скрипт по пересчету моделей**<br />
+    **>>> и мне надо доделать чтобы отправить им**<br />
+    **>>> вот этот пересчет занимает много времени поэтому я хочу просто уже развернуться и начать делать а не тратить время на подготовку**<br />
+    \>\>\> понял<br />
+    \>\>\> а какой вообще план на сегодня?<br />
+    **>>> встречаемся через пол часа, обсуждаем что делаем**<br />
+    **>>> если решили то отправляю заявку в им и жду ответа**<br />
+    **>>> если не решили то продолжаем работать**<br />
+    \>\>\> им это кому?<br />
+    **>>> инвесторы**<br />
+    **>>> https://www.ycombinator.com/howtoapply**<br />
+    **>>> там два теста)**
+
+</details>
+
+\-\-\-
+
+<details>
+    <summary>Friend 3 vs **Alexander Smirnov**</summary>
+
+    \>\>\> hey<br />
+    \>\>\> what's up?<br />
+    **>>> hey we’re sitting and solving problems**<br />
+    \>\>\> what kind of problems?<br />
+    **>>> data analysis +-**<br />
+    \>\>\> and for what?<br />
+    **>>> https://yandex.ru/cup/profile/**<br />
+    **>>> it seems it just became more interesting**<br />
+    \>\>\> cool<br />
+    \>\>\> what are you planning this evening?<br />
+    **>>> idk yet**<br />
+    \>\>\> and on the weekend?<br />
+    **>>> apparently I’ll also finish solving problems and get some work done**
+
+</details>
+
+<details>
+    <summary>original</summary>
+
+    \>\>\> прив<br />
+    \>\>\> как дела?<br />
+    **>>> здарова нормуль сидим решаем задачки**<br />
+    \>\>\> чего за задачки?<br />
+    **>>> анализ данных +-**<br />
+    \>\>\> а для чего?<br />
+    **>>> https://yandex.ru/cup/profile/**<br />
+    **>>> вроде просто поинтересней стало**<br />
+    \>\>\> прикольно<br />
+    \>\>\> что вечером планируешь?<br />
+    **>>> хз пока**<br />
+    \>\>\> а на выхах?<br />
+    **>>> видимо тоже буду дорешивать задачи и с работой позаниматься**
+
+</details>
+
+\-\-\-
+
+<details>
+    <summary>Alexander Smirnov vs **Friend 1**</summary>
+
+    \>\>\> hey<br />
+    \>\>\> what's up?<br />
+    **>>> hey)**<br />
+    **>>> good**<br />
+    **>>> you?**<br />
+    \>\>\> that’s okay too<br />
+    \>\>\> what did you do today?<br />
+    **>>> well, I worked, of course**<br />
+    **>>> and also**<br />
+    **>>> met with Alena**<br />
+    **>>> ate at the ramen shop with everyone**<br />
+    **>>> and went home**<br />
+    **>>> by the way, we booked a place for 14 people**<br />
+    **>>> for the evening))**<br />
+    \>\>\> cool<br />
+    \>\>\> and what’s about university?<br />
+    **>>> yeah**<br />
+    **>>> studied a lot**<br />
+    **>>> in general, every day I want to study more**<br />
+    \>\>\> what is the hardest thing now?<br />
+    **>>> well I don’t know**<br />
+    **>>> it just takes a very long time**<br />
+    **>>> there are some optimization methods that need to be rewritten**<br />
+    **>>> so I think maybe it's not worth optimizing**
+
+</details>
+
+<details>
+    <summary>original</summary>
+
+    \>\>\> прив<br />
+    \>\>\> как дела?<br />
+    **>>> прив)**<br />
+    **>>> норм**<br />
+    **>>> а у тебя?**<br />
+    \>\>\> да тоже норм<br />
+    \>\>\> чего делала сегодня?<br />
+    **>>> ну я работала, конечно**<br />
+    **>>> а еще**<br />
+    **>>> с Аленой встретилась**<br />
+    **>>> поели в раменной со всеми**<br />
+    **>>> и домой**<br />
+    **>>> кстати, мы забронировали рест на 14 человек**<br />
+    **>>> для вечера))**<br />
+    \>\>\> прикольно<br />
+    \>\>\> а по унику чего?<br />
+    **>>> ага**<br />
+    **>>> заботала очень много**<br />
+    **>>> вообще, каждый день хочу больше ботать**<br />
+    \>\>\> а что сейчас самое тяжелое?<br />
+    **>>> ну не знаю**<br />
+    **>>> просто очень долго получается**<br />
+    **>>> там некоторые методы оптимизации надо переписывать**<br />
+    **>>> так что я думаю, может, это не стоит оптимизировать**
+
+</details>
+
+\-\-\-
+
+<details>
+    <summary>Alexander Smirnov vs **Friend 2**</summary>
+
+    \>\>\> hey<br />
+    \>\>\> what's up?<br />
+    **>>> Hey, good, what about you?**<br />
+    **>>> Are you already in Bangkok?**<br />
+    \>\>\> yeah, already here<br />
+    \>\>\> what are your plans for today?<br />
+    **>>> Well, I would like to work on these pioneer tasks, if you don’t mind, we can do it together**<br />
+    **>>> Or you can skip, I’ll finish the livechat tomorrow**<br />
+    \>\>\> and what about live chat?<br />
+    **>>> Damn right now I launched the front on the prod without this shit that generates this thing with a logo, and it swears, says to connect js from google analytics**<br />
+    **>>> I understand that this is a fucking cringe, but I still tried to remember where to get it**<br />
+    \>\>\> yeah got it<br />
+    \>\>\> what will you do on weekends?<br />
+    **>>> We are meeting with friends here before leaving, tomorrow we need to go to the hotel by 6 am to spend the day in the best traditions**<br />
+    **>>> There's another party in the evening**<br />
+    **>>> Actually, let’s have a call, I’ll tell you**
+
+</details>
+
+<details>
+    <summary>original</summary>
+
+    \>\>\> прив<br />
+    \>\>\> как дела?<br />
+    **>>> Прив, норм, а у тебя?**<br />
+    **>>> А ты в Бангкоке уже?**<br />
+    \>\>\> ага, уже тут<br />
+    \>\>\> какие планы на сегодня?<br />
+    **>>> Ну я хотел бы поработать над этими пионерскими заданиями, если ты не против, то можно вместе поделать**<br />
+    **>>> Или можешь пока сольёшься, я завтра буду допиливать лайвчат**<br />
+    \>\>\> а чего там по лайвчату?<br />
+    **>>> Да бля щас запустил на проде фронт без этого говна, которое генерирует эту штуку с лого, и она ругается, говорит, чтобы подключить js от google analytics**<br />
+    **>>> Я понимаю, что это пиздец кринж, но я пошел все равно вспоминать, где его достать**<br />
+    \>\>\> ага понял<br />
+    \>\>\> что на выхах будешь делать?<br />
+    **>>> Встречаемся с друзьями тут перед отъездом, завтра надо в отель к 6 утра поехать чтобы день провести в лучших традициях**<br />
+    **>>> Там еще одна тусовка вечером**<br />
+    **>>> На самом деле давай колл, расскажу**
+
+</details>
+
+\-\-\-
+
+<details>
+    <summary>Alexander Smirnov vs **Friend 3**</summary>
+
+    \>\>\> hey<br />
+    \>\>\> what's up?<br />
+    **>>> Hi, haven’t you called yet?)**<br />
+    **>>> Hey**<br />
+    **>>> ok)**<br />
+    **>>> I'm going to play Dota now**<br />
+    **>>> Join if you want to)**<br />
+    \>\>\> mb a little later)<br />
+    \>\>\> what are your plans for weekends?<br />
+    **>>> Lot of gyms/flexes/parks**<br />
+    **>>> + maybe come to your place**<br />
+    \>\>\> hmm well mb mb)<br />
+    \>\>\> what's with your job btw?<br />
+    **>>> Well, I'm waiting for the info**<br />
+    \>\>\> did they say what deadlines are?<br />
+    **>>> He said that there will be a call next week to discuss it**<br />
+    \>\>\> remind me what this position is<br />
+    **>>> Data Scientist**<br />
+    **>>> The team is engaged in recommending products and other shit**<br />
+    **>>> Creating model**<br />
+    **>>> As part of this position, you will have to develop skills in machine learning, statistical data analysis, programming and much more**<br />
+    **>>> It is how I understood it**
+
+</details>
+
+<details>
+    <summary>original</summary>
+
+    \>\>\> прив<br />
+    \>\>\> как дела?<br />
+    **>>> Прив, звонил еще нет?)**<br />
+    **>>> Даров**<br />
+    **>>> Нормально)**<br />
+    **>>> Сча в доту иду**<br />
+    **>>> Если хош присоединяйся)**<br />
+    \>\>\> мб чуть позже)<br />
+    \>\>\> какие планы на выхи?<br />
+    **>>> Дохуя залов/флексов/парков**<br />
+    **>>> + мона залипнуть к тебе**<br />
+    \>\>\> хм ну мб мб)<br />
+    \>\>\> а чего у тебя с работой в итоге?<br />
+    **>>> НУ я жду инфу**<br />
+    \>\>\> а какие сроки не сказали?<br />
+    **>>> Сказал что на следующей неделе созвон где обсуждение будет**<br />
+    \>\>\> а напомни что за позиция<br />
+    **>>> Data Scientist**<br />
+    **>>> Команда занимается рекомендацией товаров и прочей хуеты**<br />
+    **>>> Создания моделькеи**<br />
+    **>>> В рамках этой позиции ты должен будет развивать навыки машинного обучения, статистического анализа данных, программирования и многое другое**<br />
+    **>>> Ну я так понял**
+
+</details>
+
+\-\-\-
+
+Conversations have become more interesting and engaging, although there's still a risk of losing context. Russian language performance has improved, but errors still occur. I believe that before fine-tuning for a specific task with limited data, like mine, it would be beneficial to first fine-tune the model unsupervised on a large corpus of Russian texts. Additionally, incorporating common conversation partners' names as separate tokens might enhance the quality.
+
+I wouldn't say it has turned out to be significantly better than LoRA. It might be more effective to focus solely on a single person and calculate the loss based only on my responses (or someone else's), instead of trying to learn about each and every conversational partner.
+
+
 ## Code
 
 You can find code for this project as well as instruction of how to replicate it yourself on your own Telegram dump in [my github repo](https://github.com/furiousteabag/doppelganger){target="\_blank"}. Training logs may be accessed on [WandB](https://wandb.ai/furiousteabag/doppelganger){target="\_blank"}.
