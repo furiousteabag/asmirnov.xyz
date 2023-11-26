@@ -1,6 +1,6 @@
 ---
-title: none
-date: none
+title: Fine-tuning LLM on my Telegram messages
+date: 2023-11-26
 ---
 
 For most people I interact with, I'm just another text-based program for the most of the time. If input and output is so simple, could I be replaced by the model? For this to work, the model would need to not only understand my writing style but also know a lot about me. The best source for this is my Telegram messenger, as I use it daily and it contains almost everything about my thoughts and actions in the form of chat histories.
