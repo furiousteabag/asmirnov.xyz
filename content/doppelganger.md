@@ -157,6 +157,292 @@ Let's try to fix all of these!
 
 LoRA offers a low-effort approach in terms of both the training pipeline and hardware requirements. It trains around 1% of the total weights. I chose a 1024 sequence length and a batch size of 8. The training, which consumed 20GB of VRAM on an RTX 3090, took three epochs and lasted for 5.5 hours. For this, I used [vast.ai](https://vast.ai/){target="\_blank"}, where the GPU cost was $0.362 per hour, totaling $2 for the entire training, excluding time spent on experiments and bug fixes.
 
+Here are the results:
+
+\-\-\-
+
+<details>
+    <summary>Friend 1 vs **Alexander Smirnov**</summary>
+
+    \>\>\> hey<br />
+    \>\>\> what's up?<br />
+    **>>> hi) all good**<br />
+    **>>> you?)**<br />
+    \>\>\> ok as well<br />
+    \>\>\> what you were doing today?<br />
+    **>>> had an amazon interview and solved problems**<br />
+    **>>> had to solve 3**<br />
+    \>\>\> cool<br />
+    \>\>\> hard?<br />
+    **>>> don't know what**<br />
+    **>>> hadn't looked yet**<br />
+    **>>> I hadn't started yet**<br />
+    **>>> chatting whole day with the team and meet new ones**<br />
+    \>\>\> how are they?<br />
+    **>>> ok**<br />
+    **>>> same coworking as you have))**
+
+</details>
+
+<details>
+    <summary>original</summary>
+
+    \>\>\> прив<br />
+    \>\>\> как дела?<br />
+    **>>> Привет) нолм все**<br />
+    **>>> ты как?)**<br />
+    \>\>\> да тоже норм<br />
+    \>\>\> чего делал сегодня?<br />
+    **>>> собесился в амазон и решал задачки**<br />
+    **>>> надо было 3 прорешить**<br />
+    \>\>\> прикольно<br />
+    \>\>\> сложные?<br />
+    **>>> хз какие**<br />
+    **>>> пока не смотрел**<br />
+    **>>> я еще ничего не началь**<br />
+    **>>> весь день просто болтаю с людьми из команды и встречаю новых**<br />
+    \>\>\> как ребята?<br />
+    **>>> норм**<br />
+    **>>> такой же ковер как у тебя))**
+
+</details>
+
+\-\-\-
+
+<details>
+    <summary>Friend 2 vs **Alexander Smirnov**</summary>
+
+    \>\>\> hey<br />
+    \>\>\> what's up?<br />
+    **>>> ok, we show yesterday's product to searchcom, today we write endpoints for them so that someone else can request our api**<br />
+    \>\>\> cool<br />
+    \>\>\> what problems do we have now?<br />
+    **>>> no problems**<br />
+    **>>> everything is working**<br />
+    **>>> I added an option to choose index**<br />
+    **>>> so now we can attach several indexes**<br />
+    **>>> and separate collections within single index**<br />
+    \>\>\> what we have to do?<br />
+    **>>> test**<br />
+    **>>> yes ok**<br />
+    **>>> are they always will be sending post-script?**
+
+</details>
+
+<details>
+    <summary>original</summary>
+
+    \>\>\> прив<br />
+    \>\>\> как дела?<br />
+    **>>> хорошо, показываем вчерашний продукт ищком, сегодня пилим эндпоинты для них чтобы кто-то еще мог нашу апи запросить**<br />
+    \>\>\> найс<br />
+    \>\>\> какие сейчас есть проблемы?<br />
+    **>>> нет проблем**<br />
+    **>>> все работает**<br />
+    **>>> я добавил опцию выбора индекса**<br />
+    **>>> так что теперь уже можно несколько индексов подключить**<br />
+    **>>> и отдельные коллекции внутри одного индекса**<br />
+    \>\>\> что надо сделать?<br />
+    **>>> протестировать**<br />
+    **>>> ага норм**<br />
+    **>>> а точно они всегда пост-скрипт будут кидать?**
+
+</details>
+
+\-\-\-
+
+<details>
+    <summary>Friend 3 vs **Alexander Smirnov**</summary>
+
+    \>\>\> hey<br />
+    \>\>\> what's up?<br />
+    **>>> Hi, good)**<br />
+    **>>> you?**<br />
+    \>\>\> ok as well<br />
+    \>\>\> what do you do at the evening?<br />
+    **>>> we have meeting with office collegues at 8 30 msk**<br />
+    **>>> after it I can**<br />
+    \>\>\> can what?<br />
+    **>>> haha)**<br />
+    \>\>\> didn't get it<br />
+    **>>> I don't know(**
+
+</details>
+
+<details>
+    <summary>original</summary>
+
+    \>\>\> прив<br />
+    \>\>\> как дела?<br />
+    **>>> Привет, хорошо)**<br />
+    **>>> ты?**<br />
+    \>\>\> да тоже норм<br />
+    \>\>\> что делаешь вечером?<br />
+    **>>> у нас с колегами встреча по офису в 8 30 мск**<br />
+    **>>> после нее я могу**<br />
+    \>\>\> можешь что?<br />
+    **>>> ахах)**<br />
+    \>\>\> не понял<br />
+    **>>> я не знаю(**
+
+</details>
+
+\-\-\-
+
+<details>
+    <summary>Alexander Smirnov vs **Friend 1**</summary>
+
+    \>\>\> hey<br />
+    \>\>\> what's up?<br />
+    **>>> hi)**<br />
+    **>>> seems good**<br />
+    **>>> was working, than went to the call with Nadya**<br />
+    **>>> now reading normally**<br />
+    **>>> you?**<br />
+    \>\>\> good as well<br />
+    \>\>\> any plans for the evening?<br />
+    **>>> after work wendesday I would love to go running**<br />
+    **>>> and then have a lunch**<br />
+    **>>> your plans?**<br />
+    \>\>\> I though about watching movie<br />
+    **>>> aa**<br />
+    **>>> ooo**<br />
+    **>>> to be honest I like when it is raining**<br />
+    **>>> when you don't feel like going anywhere**
+
+</details>
+
+<details>
+    <summary>original</summary>
+
+    \>\>\> прив<br />
+    \>\>\> как дела?<br />
+    **>>> привет)**<br />
+    **>>> вроде хорошо**<br />
+    **>>> поработал, затем поехал на коле с Надей**<br />
+    **>>> сейчас читаю нормально**<br />
+    **>>> а ты как?**<br />
+    \>\>\> да тоже хорошо<br />
+    \>\>\> какие планы на вечер?<br />
+    **>>> мне после работы среда хотелось бы сходить на пробежку**<br />
+    **>>> а потом ужинать**<br />
+    **>>> а что твои планы?**<br />
+    \>\>\> я думал кино посмотреть<br />
+    **>>> аа**<br />
+    **>>> ооо**<br />
+    **>>> честно говоря мне нравится теплый дождь больше всего**<br />
+    **>>> когда так не хочется никуда идти**
+
+</details>
+
+\-\-\-
+
+<details>
+    <summary>Alexander Smirnov vs **Friend 2**</summary>
+
+    \>\>\> hey<br />
+    \>\>\> what's up?<br />
+    **>>> Hi, great!**<br />
+    **>>> Sorry will be 20-30 min late**<br />
+    \>\>\> ok<br />
+    \>\>\> why?<br />
+    **>>> yes, I just got up and forgot to press the «exit sleep» button**<br />
+    **>>> my telegram didn’t close on its own**<br />
+    **>>> I thought it behaved like this when you logging off the Internet, but no**<br />
+    **>>> I still logged off the Internet, but telegram still didn't respond**<br />
+    **>>> and it was strange, because yesterday there was also such a case when I sent you a message and did not receive an answer**<br />
+    **>>> today I looked at mine, but not yours, but yours was displayed)**<br />
+    \>\>\> ok<br />
+    \>\>\> any plans?<br />
+    **>>> yes, we can chat a little**<br />
+    **>>> and I can tell you that the method for generating answers worked really well for me**<br />
+    **>>> he gives respectable results in training**<br />
+    **>>> but not on the test**
+
+</details>
+
+<details>
+    <summary>original</summary>
+
+    \>\>\> прив<br />
+    \>\>\> как дела?<br />
+    **>>> Привет, хорошо!**<br />
+    **>>> Соре опаздываю еще минут 20-30**<br />
+    \>\>\> пон<br />
+    \>\>\> а чего так?<br />
+    **>>> да я просто встал и забыл нажать кнопку «выйти из сна»**<br />
+    **>>> у меня телега сама не закрылась**<br />
+    **>>> я думал она так себя ведёт, когда ты выходишь из интернета, но вот**<br />
+    **>>> я все таки вышел из интернета, но телега все равно не отвечает**<br />
+    **>>> и это странно было, потому что вчера тоже был такой случай, когда я отправил тебе сообщение и не получал ответа**<br />
+    **>>> сегодня же я посмотрел свое, но не твоё, а твое отобразилось)**<br />
+    \>\>\> окей<br />
+    \>\>\> какие планы?<br />
+    **>>> да можно чуть поболтать**<br />
+    **>>> и можно рассказать что у меня прям очень сильно заработал метод по генерации ответов**<br />
+    **>>> он на тренировках дает респектабельные результаты**<br />
+    **>>> но не на тесте**
+
+</details>
+
+\-\-\-
+
+<details>
+    <summary>Alexander Smirnov vs **Friend 3**</summary>
+
+    \>\>\> hey<br />
+    \>\>\> what's up?<br />
+    **>>> hey, hi**<br />
+    **>>> Good, you?)**<br />
+    **>>> Haven’t gone to bed yet)0)0)0)**<br />
+    **>>> Today I get up and go to a programming course**<br />
+    **>>> To tighten up the base, etc.**<br />
+    \>\>\> nice<br />
+    \>\>\> what did you do yesterday?<br />
+    **>>> Yesterday there was already the same course in which it seemed to me that I did very poorly**<br />
+    **>>> Then I wanted to solve hw but I don’t care**<br />
+    **>>> Otherwise I’m fucked because I can’t sleep)**<br />
+    **>>> Really fucked up**<br />
+    **>>> It will probably be better now, since I’m already maximally overtrained**<br />
+    \>\>\> cool man<br />
+    \>\>\> what are your plans for life in general?<br />
+    **>>> Fuck, get a job interviews first**<br />
+    **>>> And if everything is ok, then actually order a computer**<br />
+    **>>> Like, I think you should order a computer when it’s more profitable than working at work**<br />
+    **>>> But I don't care**
+
+</details>
+
+<details>
+    <summary>original</summary>
+
+    \>\>\> прив<br />
+    \>\>\> как дела?<br />
+    **>>> Прив, дароу**<br />
+    **>>> Норм, ты как?)**<br />
+    **>>> Еще спать не зашел)0)0)0)**<br />
+    **>>> Сегодня встаю и еду на курс по програмированию**<br />
+    **>>> Чтоб базу подтянуть и тд**<br />
+    \>\>\> найс<br />
+    \>\>\> че вчера делал?<br />
+    **>>> Вчера уже был такой же курс в котором мне казалось что я оч плохо провел**<br />
+    **>>> Потом хотел порешать дз но пофиг**<br />
+    **>>> А то заебался из-за того что спать не могу)**<br />
+    **>>> Прям пиздец**<br />
+    **>>> Наверное сейчас будет лучше, так как уже максимально переобуженный**<br />
+    \>\>\> слушай ну с кайфом<br />
+    \>\>\> какие планы вообще на жизнь?<br />
+    **>>> Бля, тупо сначала собеситься на работу**<br />
+    **>>> И если все ок то реально заказать комп**<br />
+    **>>> Типо я думаю надо было бы заказывать комп когда выигральнее чем на работе работаешь**<br />
+    **>>> Но я хз**
+
+</details>
+
+\-\-\-
+
+This is much better. It definitely captures the style of the person it's responding on behalf of. It also identifies the most common topics discussed between chatters. For example, with friend 2, the focus is clearly more on work. However, the grammar is still off, and it loses the context of the conversation quickly. I'm pretty confident that LoRA would work with reasonable quality in English, and full fine-tuning might not be necessary. But, since Russian isn't the model's native language, let's try full fine-tuning.
+
 ## Full fine-tuning
 
 Full fine-tuning is more challenging due to the need for multi-GPU training. Popular methods include either [ZeRO & DeepSpeed](https://www.microsoft.com/en-us/research/blog/zero-deepspeed-new-system-optimizations-enable-training-models-with-over-100-billion-parameters/){target="\_blank"} ^[[How to Choose Which ZeRO Stage and Offloads To Use For Best Performance (huggingface.co/docs)](https://huggingface.co/docs/transformers/main_classes/deepspeed#how-to-choose-which-zero-stage-and-offloads-to-use-for-best-performance){target="\_blank"}] or [FSDP](https://engineering.fb.com/2021/07/15/open-source/fsdp/){target="\_blank"} ^[[Introducing PyTorch Fully Sharded Data Parallel (FSDP) API (pytorch.org/blog)](https://pytorch.org/blog/introducing-pytorch-fully-sharded-data-parallel-api/){target="\_blank"}], with FSDP essentially being a ZeRO3 ^[[It’s 2023. Is PyTorch’s FSDP the best choice for training large models? (openmmlab.medium.com)](https://openmmlab.medium.com/its-2023-is-pytorch-s-fsdp-the-best-choice-for-training-large-models-fe8d2848832f){target="\_blank"}]. I decided to go with FSDP.
