@@ -1,5 +1,5 @@
 ---
-title: Fine-tuning LLM on my Telegram messages
+title: Learnings from fine-tuning LLM on my Telegram messages
 date: 2023-11-27
 ---
 
