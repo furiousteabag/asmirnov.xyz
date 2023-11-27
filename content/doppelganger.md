@@ -763,6 +763,9 @@ Conversations have become more interesting and engaging, although there's still 
 
 I wouldn't say it has turned out to be significantly better than LoRA. It might be more effective to focus solely on a single person and calculate the loss based only on my responses (or someone else's), instead of trying to learn about each and every conversational partner.
 
+## Closing thoughts
+
+Certainly, I had to cherry-pick the results, not because most of the model's replies were inadequate, but because many were simple responses like "I'll call you later," "busy," "ok," which are naturally frequent in conversations. Despite this, it's clear that the model excels in mimicking the style of the person it's impersonating. It also captures the commonly discussed topics between two people. However, it significantly lacks context in conversations. Responding to queries like "yo, so?" or "what are your plans for the weekend" is challenging without having full context. Perhaps utilizing a system like [Rewind](https://www.rewind.ai/){target="\_blank"}, which captures everything user does across computer, could be beneficial.
 
 ## Code
 
