@@ -1,9 +1,9 @@
 ---
 title: Breaking down GPU VRAM consumption
-date: 1970-01-01
+date: 2023-12-26
 ---
 
-**Update**: Check out my [GPU VRAM Calculator](https://vram.asmirnov.xyz/)
+**Highlight**: Check out my [GPU VRAM Calculator](https://vram.asmirnov.xyz/)
 
 I've always been curious about the GPU VRAM required for training and fine-tuning transformer-based language models. What factors influence VRAM consumption? How does it vary with different model settings? I dug into the topic and conducted my own measurements.
 
@@ -110,3 +110,11 @@ Optimizers like Adam and SGD have their own memory needs. SGD with momentum and 
 Finally, the output tensors (Batch Size × Sequence Length × Vocabulary Size) are almost always in float32. This remains true even if the model was loaded in a lower precision, because model itself casts outputs to float32 most of the time ^[[Llama 2 casts output tensor to float32 (github.com/facebookresearch/llama)](https://github.com/facebookresearch/llama/blob/main/llama/model.py#L494)] ^[[Mistral casts output tensor to float32 (github.com/mistralai)](https://github.com/mistralai/mistral-src/blob/main/mistral/model.py#L304)].
 
 While training, we also need to store probabilities `F.softmax(logits, dim=-1)` which are the same size as output tensor.
+
+## Problems
+
+In my experiments with measuring VRAM usage [in the notebook](https://github.com/furiousteabag/vram/blob/master/vram.ipynb), I am facing some persistent mismatch between what my experiments show and the calculated figures, particularly regarding the size of activations during the training's forward pass. So there is still something to figure out!
+
+## Acknowledgements
+
+Thanks to [Stas Bekman](https://stasosphere.com/machine-learning/) for helping me shaping my understanding and Quentin Anthony's Python [gist for VRAM calculation](https://gist.github.com/Quentin-Anthony/f43939791a7ceb0b01a4937308317be5).
