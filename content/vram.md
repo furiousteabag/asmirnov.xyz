@@ -43,3 +43,70 @@ What if a model doesn't fit on a single GPU? There are two scenarios:
 
 1. Inference: Use model parallelism to distribute layers across GPUs. This is done automatically in transformers with `device_map="auto"`. Learn more in the [accelerate docs](https://huggingface.co/docs/accelerate/main/en/concept_guides/big_model_inference).
 2. Training: Distribute layers, optimizer states and gradients across GPUs. Depending on your setup, you might use different [DeepSpeed ZeRO stages](https://www.microsoft.com/en-us/research/blog/zero-deepspeed-new-system-optimizations-enable-training-models-with-over-100-billion-parameters/) or [FSDP](https://engineering.fb.com/2021/07/15/open-source/fsdp/) ^[[Introducing PyTorch Fully Sharded Data Parallel (FSDP) API (pytorch.org/blog)](https://pytorch.org/blog/introducing-pytorch-fully-sharded-data-parallel-api/)] for full sharding. The more you shard, the slower training will be because of a communication overhead. For a comparison of multi-GPU training approaches, check out [Hugging Face's documentation](https://huggingface.co/docs/transformers/main/en/perf_train_gpu_many).
+
+## Breaking down the components
+
+Memory consumption is consists of the following components:
+
+<center>
+
+|                  | Train | Inference |
+| :--------------: | :---: | :-------: |
+|   CUDA Kernels   |  ✅   |    ✅     |
+|    Parameters    |  ✅   |    ✅     |
+|   Activations    |  ✅   |    ✅     |
+|    Gradients     |  ✅   |    ❌     |
+| Optimizer States |  ✅   |    ❌     |
+|     Outputs      |  ✅   |    ✅     |
+
+</center>
+
+An interesting aspect of PyTorch is its approach to memory allocation. Essentially, PyTorch rarely releases memory once it's been allocated. For instance, during the forward pass, activations are calculated and stored in memory. Even after these activations are no longer needed following the backward pass, the memory they occupy isn't released. This strategy is adopted to avoid the overhead associated with frequent memory allocation calls ^[[What exactly is occupying the GPU cache? (discuss.pytorch.org)](https://discuss.pytorch.org/t/what-exactly-is-occupying-the-gpu-cache/80645/2)].
+
+### CUDA Kernels
+
+Upon first using the GPU, CUDA kernels will allocate between 300 MiB to 2000 MiB. This can vary based on GPU, driver, and PyTorch versions. It could be measured by initializing any small tensor and moving it to GPU:
+
+```python
+x = torch.ones(1).cuda()
+```
+
+### Parameters
+
+When measuring the amount of memory which will be used by parameters, it is important to understand a difference between parameters and buffers. Parameters are the actual weights which are being trained and updated by the optimizer. They could be retrieved by calling `model.parameters()`. Apart from parameters there exist fixed tensors, which are needed in some computations, but which are not needed to be updated. These are called buffers and may be retrieved by calling `model.buffers()`. One example of buffers are precomputed positional encodings ^[[What is the difference between `register_buffer` and `register_parameter` of `nn.Module` (discuss.pytorch.org)](https://discuss.pytorch.org/t/what-is-the-difference-between-register-buffer-and-register-parameter-of-nn-module/32723)]. So, in this section, under 'parameters' I assume 'parameters' + 'buffers'.
+
+During inference, the memory needed for parameters is straightforward—it's just the number of parameters multiplied by the number of bytes per parameter. You are specifying number of bytes per parameter when loading model like `.from_pretrained(..., torch_dtype=torch.float16)`. For instance, a 7B-parameter model like Mistral, when loaded in half-precision (float16), would take 7.51 × 10⁹ × 2 bytes, equating to 14324 MiB.
+
+When training as usual, in full precision, 4 bytes per parameter are occupied. Mixed precision training is more common though, in this case we have to maintain both half precision (for forward pass, 2 bytes per param) and full precision model weights (for applying updates to them, 4 bytes per param), so in total it takes 6 bytes per param.
+
+### Activations
+
+'Activations' refer to the intermediate outputs essential for backpropagation. They are usually the memory bottleneck in transformer training, especially since their size scales quadratically with sequence length (we have to store the output of a `softmax(Q×K.T)` which has Batch Size × Number of Attention Heads × Sequence Length \*\* 2 shape). There are good estimations of activations size per layer in ["Reducing Activation Recomputation in Large Transformer Models"](https://arxiv.org/abs/2205.05198) paper in section 4.1 although for each model activations will differ. For example in the mentioned paper they also count dropout masks whereas newer architectures like [Llama](https://github.com/facebookresearch/llama/blob/main/llama/model.py) don't use dropout at all.
+
+During training, we store all layer activations for backprop, but in inference, we only keep the current (single) layer's activations.
+
+We can reduce activations size on training in the cost of training speed (slowdown arong 20%) by discarding the activations during forward pass and recalculating them when needed during the backward pass, this called [gradient checkpointing](https://medium.com/tensorflow/fitting-larger-networks-into-memory-583e3c758ff9).
+
+### Gradients
+
+Gradients are always stored in full precision taking 4 bytes per parameter.
+
+### Optimizer states
+
+Optimizers like Adam and SGD have their own memory needs. SGD with momentum and Adam both store a moving average of gradients for each parameter in full precision. Additionally, Adam keeps a moving average of squared gradients.
+
+<center>
+
+|                | First Moments | Second Moments | Bytes per Param |
+| :------------: | :-----------: | :------------: | :-------------: |
+|      SGD       |      ❌       |       ❌       |        0        |
+| SGD w momentum |      ✅       |       ❌       |        4        |
+|      ADAM      |      ✅       |       ✅       |        8        |
+
+</center>
+
+### Outputs
+
+Finally, the output tensors (Batch Size × Sequence Length × Vocabulary Size) are almost always in float32. This remains true even if the model was loaded in a lower precision, because model itself casts outputs to float32 most of the time ^[[Llama 2 casts output tensor to float32 (github.com/facebookresearch/llama)](https://github.com/facebookresearch/llama/blob/main/llama/model.py#L494)] ^[[Mistral casts output tensor to float32 (github.com/mistralai)](https://github.com/mistralai/mistral-src/blob/main/mistral/model.py#L304)].
+
+While training, we also need to store probabilities `F.softmax(logits, dim=-1)` which are the same size as output tensor.
