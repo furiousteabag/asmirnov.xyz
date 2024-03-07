@@ -5,6 +5,8 @@ date: 2023-12-26
 
 **Highlight**: Check out my [GPU VRAM Calculator](https://vram.asmirnov.xyz/){target="\_blank"}
 
+**Highlight**: Check out [HN discussion](https://news.ycombinator.com/item?id=38774026){target="\_blank"}
+
 I've always been curious about the GPU VRAM required for training and fine-tuning transformer-based language models. What factors influence VRAM consumption? How does it vary with different model settings? I dug into the topic and conducted my own measurements.
 
 Other great resources on this topic include [Stas Bekman's section](https://github.com/stas00/ml-engineering/blob/master/performance/software.md#anatomy-of-models-memory-usage){target="\_blank"} from his ML Engineering book, the core inspiration for [Hugging Face's model memory anatomy article](https://huggingface.co/docs/transformers/main/en/model_memory_anatomy#anatomy-of-models-memory){target="\_blank"}. Also, check out [Eleuther's blog](https://blog.eleuther.ai/transformer-math/#memory-requirements){target="\_blank"} which also covers compute costs.

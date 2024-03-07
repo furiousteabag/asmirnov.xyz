@@ -3,6 +3,8 @@ title: Learnings from fine-tuning LLM on my Telegram messages
 date: 2023-11-27
 ---
 
+**Highlight**: Check out [HN discussion of this post](https://news.ycombinator.com/item?id=38434914){target="\_blank"}
+
 For most people I interact with, I'm just another text-based program for the most of the time. If input and output are so simple, could I be replaced by the model? For this to work, the model would need to not only understand my writing style but also know a lot about me. The best source for this is my Telegram messenger, as I use it daily and it contains almost everything about my thoughts and actions in the form of chat histories.
 
 ## Approach
