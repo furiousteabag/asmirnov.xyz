@@ -1,5 +1,5 @@
 ---
-title: Understanding SAFEs and Priced Equity Rounds
+title: Understanding SAFEs and priced equity rounds
 date: 2023-03-29
 ---
 
