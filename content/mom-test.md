@@ -254,3 +254,139 @@ Buying from a startup is already weird. First customers are crazy in some way. T
 They might give you money even for pre-orders and duct-tape prototypes. If someone isn't emotional it's pretty unlikely that they are crazy enough to be the first customer.
 
 In early-stage sales, the real goal is learning. Revenue is just a side effect.
+
+## Finding conversations
+
+### Going to them
+
+1. Cold calls
+
+   The goal of cold calls is to stop getting them by treating the first one or two respectfully trying to solve their problem and getting warm intros from them.
+
+2. Seizing serendipity
+
+   Sounds weird to unexpectedly interview people but you should think of a conversation instead. People love talking about themselves and their problems. Don't make excuses about why you are there or mention that you are starting a business. Just have a good conversation.
+
+3. Find a good excuse
+
+   For example "Hello, I'm doing my PhD research on a problem around X and it would be a huge help if I could ask you a couple of questions"
+
+   If it's a topic you both care about, find an excuse to talk about it. Your idea never needs to enter the equation and you both will enjoy the chat.
+
+4. Immerse yourself in where they are
+
+5. Landing pages
+
+   Get your product out there, collect emails, and reach out.
+
+### Bringing them to you
+
+When you are finding ways to have conversations, you're on the back foot. You approached, so they are suspicious and trying to figure out if you're trying to waste their time.
+
+1. Organise meetups
+2. Speaking & teaching
+
+   Conferences, workshops, online videos, blogging, consulting, office hours.
+
+3. Industry blogging
+
+4. Get clever
+
+   Business-specific hacks.
+
+### Creating warm intros
+
+These are the goals.
+
+1. 7 degrees of bacon
+
+   Research the network.
+
+2. Industry advisors
+
+   They might create incredible intros. They might come from early customer conversations.
+
+3. Universities
+
+   Professors are easy to reach out and they get grant funding from high-level industry folks.
+
+4. Investors
+
+5. Cash in favours
+
+   Everybody who said "Keep me in the loop and let me know how I can help"
+
+   You are going to be ignored a lot, but so what? **You aren't trying to minimize failure rate; you are trying to get conversations going**.
+
+### Asking for and framing the meeting
+
+It might be unclear what the meeting is for. So it is important to frame it:
+
+1. You're an entrepreneur trying to solve horrible problem X, usher in wonderful vision Y, or fix stagnant industry Z. Don't mention your idea.
+2. Frame expectations by mentioning what stage you're at and, if it's true, that you don't have anything to sell.
+3. Show weakness and give them a chance to help by mentioning the specific problem that you're looking for answers to. This will also clarify that you're not a time waster.
+4. Put them on a pedestal by showing how much they, in particular, can help.
+5. Ask for help.
+
+Or, in shorter form: Vision / Framing / Weakness / Pedestal / Ask
+
+### To commute or to call
+
+Better to start in person.
+
+### The advisory flip
+
+Be with a mindset of looking for advisors instead of customers.
+
+### How many meetings
+
+Keep having conversations until you stop hearing new stuff.
+
+## Choosing your customers
+
+### Segmentation
+
+Every company starts small, otherwise it is too generic; the marketing message is generic.
+
+If you have a fuzzy sense of who you're serving, you end up talking to a lot of different types of people, which leads to 3 problems:
+
+- You get overwhelmed by options and don't know where to start
+- You aren't moving forward but can't prove yourself wrong
+- You receive incredibly mixed feedback and can't make sense of it
+
+Talking to an industry expert can provide a taxonomy of the industry.
+
+If you aren't finding consistent problems and goals, you don't yet have a specific enough customer segment.
+
+### Customer slicing
+
+Start with a broad segment and ask:
+
+- Within this group, which type of person would want it most?
+- Would everyone within this group buy/use it, or only some of them?
+- Why do they want it? (e.g. What their problem or goal)
+- Does everyone in the group have that motivation or only some of them?
+- What additional motivations are there?
+- Which other types of people have these motivations?
+
+Having those answered, we will have segments and motivations. How to find them:
+
+- What are these people already doing to achieve their goals or survive their problems?
+- Where can we find our demographic groups?
+- Where can we find people doing the above workaround behaviors?
+
+If groups are unfindable then slice into finer pieces. Now that we have those, we may start with the most:
+
+1. Profitable
+2. Easy to reach
+3. Rewarding for us to build a business around
+
+Good customer segments are a who-where pair. If you don't know where to go to find your customers, keep slicing your segment until you do.
+
+### Talking to the wrong people
+
+3 ways to do so:
+
+1. You have too broad of a segment and are talking to everyone
+2. You have multiple customer segments and missed some of them
+3. You are selling to businesses with a complicated buying process and have overlooked some of the stakeholders
