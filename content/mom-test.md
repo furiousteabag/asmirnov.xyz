@@ -1,6 +1,6 @@
 ---
 title: Mom Test
-date: 2024-03-27
+date: 2024-03-30
 ---
 
 ## The Mom Test
@@ -390,3 +390,28 @@ Good customer segments are a who-where pair. If you don't know where to go to fi
 1. You have too broad of a segment and are talking to everyone
 2. You have multiple customer segments and missed some of them
 3. You are selling to businesses with a complicated buying process and have overlooked some of the stakeholders
+
+## Running the process
+
+It is a bad pattern for a single guy to do all the meetings and tell everybody what to do because it's easy to misinterpret what customers say.
+
+Symptoms of a learning bottleneck:
+
+- "You just worry about the product. I'll learn what we need to know."
+- "Because the customers told me so!"
+- "I don't have time to talk to people -- I need to be coding!"
+
+### Prepping
+
+Ensure you know your current list of 3 big questions. Scary questions should be there as well. If some questions could be answered using desk research -- do it.
+
+Questions to unearth hidden risks:
+
+- "If this company fails, what is most likely to have killed it?"
+- "What would have to be true for this to be a huge success?"
+
+We are trying to figure out:
+
+- "What do we want to learn from these guys?"
+
+If you don't know what you're trying to learn, you shouldn't bother having the conversation.
