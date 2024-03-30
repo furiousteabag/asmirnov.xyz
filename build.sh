@@ -19,4 +19,5 @@ for FILE in ./content/*.md; do
         -o "$OUTPUT/$FILENAME.html"
     sed -i 's/<sup>\(.*\)<\/sup>/[\1]/g' "$OUTPUT/$FILENAME.html"
     sed -i ':a;N;$!ba;s/\(<a[^>]*class="footnote-back"[^>]*>[^<]*<\/a>\)/ | \1/g' "$OUTPUT/$FILENAME.html"
+    echo "$PWD/$OUTPUT/$FILENAME.html"
 done
