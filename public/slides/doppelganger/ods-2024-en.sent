@@ -1,0 +1,135 @@
+• Alexander Smirnov
+• Household Robots @ Entrepreneur First
+• ex Booking.com, Yandex, JetBrains
+
+impersonating yourself with an LLM
+
+# anybody thought about replacing themselves?
+@badges.png
+
+# depends on the role, for me as a SWE
+90% of interactions are text I/O ➜ LLM
+
+######################
+#        Data        #
+######################
+
+data sources?
+
+handcrafted facts
+✅ easy to start
+❌ lack of style
+❌ hard to maintain
+
+message history
+✅ covers everything
+❓ how to fit to LLM
+
+######################
+#      Methods       #
+######################
+
+approaches?
+
+prompt with all messages
+✅ style
+❌ 5y tg messages are ~1M tokens
+
+prompt with extracted facts
+❌ style
+
+RAG
+❌ not a search problem
+❌ what to retrieve?
+
+finetuning
+✅ style
+✅ making use of everything
+
+######################
+#   Data Extraction  #
+######################
+
+extracting data
+
+tg ➜ json ➜ sessions
+
+# many-to-many instead of one-by-one
+# training on responses
+@session-example.png
+
+######################
+#   What to Train    #
+######################
+
+what to train?
+
+❌ OpenAI et al.
+✅ open source
+
+@llm-leaderboard.png
+
+######################
+#   How to Train     #
+######################
+
+training
+
+@finetuning.png
+
+######################
+#   Where to Train   #
+######################
+
+but I don't have GPU...
+
+# quotas
+❌ GCP/AWS/Azure
+# airbnb for gpus
+✅ vast.ai
+
+######################
+#       Results      #
+######################
+
+results
+
+@session-before.png
+
+LoRA
+
+@finetune-lora.png
+
+• 1% of total weights
+• 1024 sequence length 
+• 8 batch size 
+• 20GB of VRAM on an RTX 3090
+• 3 epochs for 5.5 hours
+• $0.362 per hour, totaling $2 
+
+full fine-tuning
+
+@finetune-full.png
+
+• half-precision FSDP full shard
+• 1024 sequence length
+• 2 micro batch size
+• 8 A100 80GB GPUs
+• 63GB of VRAM per GPU
+• 3 epochs for 20 minutes
+• $8.88 per hour, resulting in $3
+
+conclusions
+
+✅ style
+✅ opinions
+✅ background
+❌ language errors
+❌ ongoing events
+❌ long context
+❌ engagement ("busy", "ok", etc)
+• LoRA ≈ full fine-tuning
+
+@github.png
+
+asmirnov.xyz
