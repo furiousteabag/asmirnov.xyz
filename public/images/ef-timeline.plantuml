@@ -1,0 +1,49 @@
+@startgantt
+printscale weekly
+
+<style>
+ganttDiagram {
+  timeline {
+    LineColor transparent
+ }
+}
+</style>
+
+Project starts 2023-11-27
+[Application submitted] happens 2023-11-27
+[Interview 1] happens 2023-12-12
+[Interview 2] happens 2023-12-15
+[Interview 3] happens 2024-01-10
+[Interview 4] happens 2024-01-15
+[Offer to join] happens 2024-01-17
+[1-1 online meetings w peers] starts 2024-02-01
+[1-1 online meetings w peers] ends 2024-03-22
+[Kick-off summit (missed)] starts 2024-03-23
+[Kick-off summit (missed)] ends 2024-03-24
+[Arrival to London] happens 2024-03-25
+[Start of the teambuilding phase] happens 2024-04-08
+[Pair up] happens 2024-04-11
+[Working on consumer goods discovery] starts at [Pair up]'s end
+[Working on consumer goods discovery] ends 2024-04-22
+[Pivot] happens at [Working on consumer goods discovery]'s end
+[Working on robodog] starts at [Pivot]'s end
+[Working on robodog] ends 2024-06-05
+[Break up] happens on 2024-05-13
+[End of the teambuilding phase] happens 2024-05-31
+
+[Application submitted] is colored in Orange
+[Interview 1] is colored in Purple
+[Interview 2] is colored in Purple
+[Interview 3] is colored in Purple
+[Interview 4] is colored in Purple
+[Offer to join] is colored in Green
+[Kick-off summit (missed)] is colored in Purple/Black
+[Start of the teambuilding phase] is colored in Purple
+[End of the teambuilding phase] is colored in Purple
+[Working on consumer goods discovery] is colored in Cyan/Black
+[Working on robodog] is colored in Cyan/Black
+[Pair up] is colored in Olive
+[Pivot] is colored in Olive
+[Break up] is colored in Olive
+
+@endgantt
