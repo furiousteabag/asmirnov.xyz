@@ -11,7 +11,7 @@ I've always been curious about the GPU VRAM required for training and fine-tunin
 
 Other great resources on this topic include [Stas Bekman's section](https://github.com/stas00/ml-engineering/blob/master/performance/software.md#anatomy-of-models-memory-usage){target="\_blank"} from his ML Engineering book, the core inspiration for [Hugging Face's model memory anatomy article](https://huggingface.co/docs/transformers/main/en/model_memory_anatomy#anatomy-of-models-memory){target="\_blank"}. Also, check out [Eleuther's blog](https://blog.eleuther.ai/transformer-math/#memory-requirements){target="\_blank"} which also covers compute costs.
 
-Quick note: This post doesn't delve into the memory usage of quantized models and PEFT fine-tuning techniques like LoRA or QLoRA.
+Quick note: This post doesn't dig into the memory usage of quantized models and PEFT fine-tuning techniques like LoRA or QLoRA.
 
 ## Prerequisites for experiments
 
