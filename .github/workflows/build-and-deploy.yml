@@ -1,21 +1,58 @@
 name: Build and Deploy
+
 on:
   push:
     branches:
       - master
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Set up build dependencies
+
+      - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc plantuml graphviz
+          sudo apt-get install -y wget unzip jq
+
+      - name: Install Pandoc from source
+        run: |
+          LATEST_PANDOC=$(curl -s https://api.github.com/repos/jgm/pandoc/releases/latest | jq -r '.assets[] | select(.name | test("linux-amd64.tar.gz")) | .browser_download_url')
+          wget $LATEST_PANDOC -O pandoc-latest-linux-amd64.tar.gz
+          tar -xvzf pandoc-latest-linux-amd64.tar.gz
+          sudo cp -r pandoc-*/bin/* /usr/local/bin/
+          sudo cp -r pandoc-*/share/* /usr/local/share/
           pandoc --version
+
+      - name: Install PlantUML
+        run: |
+          LATEST_PLANTUML=$(curl -s https://api.github.com/repos/plantuml/plantuml/releases/latest | jq -r '.assets[] | select(.name | test(".jar$")) | .browser_download_url')
+          wget $LATEST_PLANTUML -O plantuml-latest.jar
+          sudo mkdir -p /usr/local/plantuml
+          sudo mv plantuml-latest.jar /usr/local/plantuml/plantuml.jar
+          echo '#!/bin/sh' | sudo tee /usr/local/bin/plantuml
+          echo 'java -jar /usr/local/plantuml/plantuml.jar "$@"' | sudo tee -a /usr/local/bin/plantuml
+          sudo chmod +x /usr/local/bin/plantuml
+          plantuml -version
+
+      - name: Install Graphviz from source
+        run: |
+          sudo apt-get install -y build-essential libexpat1-dev libpng-dev zlib1g-dev libfreetype6-dev
+          LATEST_GRAPHVIZ=$(curl -s https://api.github.com/repos/ellson/graphviz/releases/latest | jq -r '.tarball_url')
+          wget $LATEST_GRAPHVIZ -O graphviz-latest.tar.gz
+          tar -xvzf graphviz-latest.tar.gz
+          cd graphviz-*
+          ./autogen.sh
+          ./configure
+          make
+          sudo make install
+          dot -version
+
       - name: Build HTML files
         run: ./build.sh
+
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
@@ -26,18 +63,12 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Create GitHub Deployment
-        uses: chrnorm/deployment-action@v2
-        id: deployment
-        with:
-          token: "${{ secrets.GITHUB_TOKEN }}"
-          environment: production
-          initial-status: in_progress
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
           name: out
           path: out
+
       - name: Copy files to server
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -47,6 +78,7 @@ jobs:
           port: ${{ secrets.PORT }}
           source: "out/*"
           target: "/tmp/asmirnov.xyz"
+
       - name: Replace target files
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -62,18 +94,3 @@ jobs:
             sudo mkdir -p $TARGET_DIR
             sudo mv /tmp/asmirnov.xyz/out/* $TARGET_DIR/
             sudo rm -rf /tmp/asmirnov.xyz
-      - name: Update deployment status (success)
-        if: success()
-        uses: chrnorm/deployment-status@v2
-        with:
-          token: "${{ secrets.GITHUB_TOKEN }}"
-          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
-          state: "success"
-          environment-url: https://asmirnov.xyz/
-      - name: Update deployment status (failure)
-        if: failure()
-        uses: chrnorm/deployment-status@v2
-        with:
-          token: "${{ secrets.GITHUB_TOKEN }}"
-          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
-          state: "failure"
