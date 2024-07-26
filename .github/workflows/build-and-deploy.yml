@@ -1,0 +1,78 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc plantuml graphviz
+      - name: Build HTML files
+        run: ./build.sh
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: out
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create GitHub Deployment
+        uses: chrnorm/deployment-action@v2
+        id: deployment
+        with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          environment: production
+          initial-status: in_progress
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: out
+          path: out
+      - name: Copy files to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          source: "out/*"
+          target: "/tmp/asmirnov.xyz"
+      - name: Replace target files
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          command_timeout: "60m"
+          script: |
+            set -x
+            TARGET_DIR="/usr/share/nginx/asmirnov.xyz/html"
+            sudo rm -rf $TARGET_DIR/*
+            sudo mkdir -p $TARGET_DIR
+            sudo mv /tmp/asmirnov.xyz/out/* $TARGET_DIR/
+            sudo rm -rf /tmp/asmirnov.xyz
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@v2
+        with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+          state: "success"
+          environment-url: https://asmirnov.xyz/
+      - name: Update deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@v2
+        with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+          state: "failure"
