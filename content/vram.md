@@ -109,7 +109,7 @@ Optimizers like Adam and SGD have their own memory needs. SGD with momentum and 
 
 ### Outputs
 
-Finally, the output tensors (Batch Size × Sequence Length × Vocabulary Size) are almost always in float32. This remains true even if the model was loaded in a lower precision because model itself casts outputs to float32 most of the time ^[[Llama 2 casts output tensor to float32 (github.com/facebookresearch/llama)](https://github.com/facebookresearch/llama/blob/main/llama/model.py#L494){target="\_blank"}] ^[[Mistral casts output tensor to float32 (github.com/mistralai)](https://github.com/mistralai/mistral-src/blob/main/mistral/model.py#L304){target="\_blank"}].
+Finally, the output tensors (Batch Size × Sequence Length × Vocabulary Size) are almost always in float32. This remains true even if the model was loaded in a lower precision because model itself casts outputs to float32 most of the time ^[[Llama 2 casts output tensor to float32 (github.com/facebookresearch/llama)](https://github.com/facebookresearch/llama/blob/main/llama/model.py#L494){target="\_blank"}] ^[[Mistral casts output tensor to float32 (github.com/mistralai)](https://github.com/mistralai/mistral-inference/blob/main/src/mistral_inference/model.py#L326){target="\_blank"}].
 
 While training, we also need to store probabilities `F.softmax(logits, dim=-1)` which are the same size as the output tensor.
 
