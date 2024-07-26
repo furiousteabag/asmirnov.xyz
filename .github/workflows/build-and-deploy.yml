@@ -40,10 +40,9 @@ jobs:
       - name: Install Graphviz from source
         run: |
           sudo apt-get install -y build-essential libexpat1-dev libpng-dev zlib1g-dev libfreetype6-dev
-          LATEST_GRAPHVIZ=$(curl -s https://api.github.com/repos/ellson/graphviz/releases/latest | jq -r '.tarball_url')
-          wget $LATEST_GRAPHVIZ -O graphviz-latest.tar.gz
-          tar -xvzf graphviz-latest.tar.gz
-          cd graphviz-*
+          wget https://gitlab.com/graphviz/graphviz/-/archive/main/graphviz-main.tar.gz
+          tar -xvzf graphviz-main.tar.gz
+          cd graphviz-main
           ./autogen.sh
           ./configure
           make
