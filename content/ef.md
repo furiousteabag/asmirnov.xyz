@@ -32,7 +32,7 @@ In November 2023 I [moved on from developing AskGuru](https://asmirnov.xyz/askgu
 
 Here is the rough timeline of the main events:
 
-![](./images/ef-timeline.png)
+![](./images/ef-timeline.svg)
 
 ### Getting in
 
