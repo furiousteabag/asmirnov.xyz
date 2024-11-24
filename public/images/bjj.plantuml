@@ -1,0 +1,143 @@
+@startuml
+
+allow_mixing
+hide stereotype
+
+<style>
+'https://github.com/plantuml/plantuml/issues/1896
+object {
+    FontStyle bold
+}
+'#99fb99
+.green {
+    BackgroundColor palegreen
+}
+'#ffd700
+.yellow {
+    BackgroundColor gold
+}
+'#ffa401
+.orange {
+    BackgroundColor orange
+}
+'#fe6247
+.red {
+    BackgroundColor tomato
+}
+'#768999
+.gray {
+    BackgroundColor lightslategray 
+}
+</style>
+
+object "Grip Fighting" as GripFighting <<gray>> {
+  <img:./bjj/GripFighting.png>
+}
+object "Open Guard (Top)" as OpenGuardTop <<gray>> {
+  <img:./bjj/OpenGuardTop.png>
+}
+object "Open Guard (Bottom)" as OpenGuardBottom <<gray>> {
+  <img:./bjj/OpenGuardBottom.png>
+}
+object "Back Control" as BackControl <<green>> {
+  <img:./bjj/BackControlTop.png>
+}
+object "Mount (Top)" as MountTop <<green>> {
+  <img:./bjj/MountTop.png>
+}
+object "Side Control (Top)" as SideControlTop <<green>> {
+  <img:./bjj/SideControlTop.png>
+}
+object "Guard (Bottom)" as GuardBottom <<green>> {
+  <img:./bjj/GuardBottom.png>
+}
+object "Half Guard (Top)" as HalfGuardTop <<yellow>> {
+  <img:./bjj/HalfGuardTop.png>
+}
+object "Half Guard (Bottom)" as HalfGuardBottom <<orange>> {
+  <img:./bjj/HalfGuardBottom.png>
+}
+object "Guard (Top)" as GuardTop <<orange>> {
+  <img:./bjj/GuardTop.png>
+}
+object "Side Control (Bottom)" as SideControlBottom <<red>> {
+  <img:./bjj/SideControlBottom.png>
+}
+object "Mount (Bottom)" as MountBottom <<red>> {
+  <img:./bjj/MountBottom.png>
+}
+object "Back Taken" as BackTaken <<red>> {
+  <img:./bjj/BackControlBottom.png>
+}
+
+action "Leg Drag Pass" as LegDragPass [[https://www.youtube.com/watch?v=n596l_pJi-E]]
+action "Jumping Guard Pass" as JumpingGuardPass
+action "Toreando Pass" as ToreandoPass
+action "Knee Cut Pass" as KneeCutPass
+action "Single Leg Takedown" as SingleLegTakedown [[https://www.youtube.com/watch?v=4HBVdF5AXc0]]
+action "Bridge and Shrimp" as BridgeAndShrimp
+action "Push and Spin" as PushAndSpin
+action "Pull Guard" as PullGuard
+action "Stand Up" as StandUp
+action "Stand Up Elbow Push" as StandUpElbowPush
+action "Leg Lift" as LegLift
+
+cloud "Arm Triangle Choke" as ArmTriangleChoke
+cloud "Triangle Choke\nwith Arms Pulled" as TriangleChokeArmsPulled
+cloud "Triangle Choke\nvia Overhook" as TriangleChokeOverhook
+cloud "Armbar" as Armbar
+cloud "Kimura" as Kimura
+cloud "Guillotine Choke" as GuillotineChoke
+cloud "Achilles Lock" as AchillesLock
+cloud "Shoulder Pressure" as ShoulderPressure
+cloud "Rear Naked Choke" as RearNakedChoke
+cloud "Buggy Choke" as BuggyChoke
+
+GripFighting -- PullGuard
+PullGuard --> OpenGuardTop
+GripFighting -- SingleLegTakedown
+SingleLegTakedown --> OpenGuardTop
+GripFighting -- JumpingGuardPass
+JumpingGuardPass --> GuardBottom
+
+OpenGuardTop -- LegDragPass
+LegDragPass --> SideControlTop
+OpenGuardTop -- ToreandoPass
+ToreandoPass --> SideControlTop
+OpenGuardTop -- PushAndSpin
+PushAndSpin --> SideControlTop
+OpenGuardTop -- KneeCutPass
+KneeCutPass --> SideControlTop
+OpenGuardTop --> AchillesLock
+
+OpenGuardBottom --> AchillesLock
+
+SideControlTop --> MountTop
+SideControlTop --> ShoulderPressure
+SideControlTop --> BackControl
+
+MountTop --> ArmTriangleChoke
+
+SideControlBottom -- BridgeAndShrimp
+MountBottom -- BridgeAndShrimp
+BridgeAndShrimp --> GuardBottom
+SideControlBottom --> BuggyChoke
+
+GuardBottom --> TriangleChokeArmsPulled
+GuardBottom --> TriangleChokeOverhook
+GuardBottom --> Armbar
+GuardBottom --> Kimura
+GuardBottom --> GuillotineChoke
+
+BackControl --> RearNakedChoke
+
+GuardTop -- StandUp
+StandUp --> OpenGuardTop
+GuardTop -- StandUpElbowPush
+StandUpElbowPush --> OpenGuardTop
+GuardTop -- LegLift
+LegLift --> SideControlTop
+
+/' north south '/
+
+@enduml
