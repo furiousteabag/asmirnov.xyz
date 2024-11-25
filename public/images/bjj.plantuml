@@ -81,6 +81,8 @@ action "Pull Guard" as PullGuard
 action "Stand Up" as StandUp
 action "Stand Up Elbow Push" as StandUpElbowPush
 action "Leg Lift" as LegLift
+action "Pendulum Sweep" as PendulumSweep [[https://youtu.be/8zuFg-PigDc?si=Rv69aqx8sC6SVADT&t=139]]
+action "Bridge Escape" as BridgeEscape [[https://www.youtube.com/watch?v=0b8lql9QhgI]]
 
 cloud "Arm Triangle Choke" as ArmTriangleChoke
 cloud "Triangle Choke\nwith Arms Pulled" as TriangleChokeArmsPulled
@@ -91,7 +93,8 @@ cloud "Guillotine Choke" as GuillotineChoke
 cloud "Achilles Lock" as AchillesLock
 cloud "Shoulder Pressure" as ShoulderPressure
 cloud "Rear Naked Choke" as RearNakedChoke
-cloud "Buggy Choke" as BuggyChoke
+cloud "Buggy Choke" as BuggyChoke [[https://www.youtube.com/watch?v=0VDUwuyT6N4]]
+cloud "Ezekiel Choke" as EzekielChoke
 
 GripFighting -- PullGuard
 PullGuard --> OpenGuardTop
@@ -117,17 +120,22 @@ SideControlTop --> ShoulderPressure
 SideControlTop --> BackControl
 
 MountTop --> ArmTriangleChoke
+MountTop --> EzekielChoke
 
 SideControlBottom -- BridgeAndShrimp
 MountBottom -- BridgeAndShrimp
 BridgeAndShrimp --> GuardBottom
 SideControlBottom --> BuggyChoke
+MountBottom -- BridgeEscape
+BridgeEscape --> GuardTop
 
 GuardBottom --> TriangleChokeArmsPulled
 GuardBottom --> TriangleChokeOverhook
 GuardBottom --> Armbar
 GuardBottom --> Kimura
 GuardBottom --> GuillotineChoke
+GuardBottom -- PendulumSweep
+PendulumSweep --> MountTop
 
 BackControl --> RearNakedChoke
 
