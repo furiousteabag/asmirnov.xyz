@@ -20,10 +20,28 @@ This page is for documenting my Brazilian jiu-jitsu journey.
 
 ## Tournaments
 
+### Môsses Summer Open
+
+- [Bracket](https://smoothcomp.com/en/event/21186/bracket/1272156)
+- No-Gi / Beginner / Adult / -76 kg
+- Jan 2025, Lima, Peru
+- 1 loss
+
+#### vs Roberto
+
+The plan was to do a double-leg takedown and go from there. We started to fight standing and I didn't feel like I was in a good position to go for it. I began to get tired fast. Two times I did dive for it, the first time he defended and we recovered to a standing position, the second time he rolled over and I had him in a closed guard on the ground. It was counted as a takedown and he was given 2 points for it. We sat in a closed guard until the end. Lost by points 0-2.
+
+Lessons:
+
+- Shoot for more takedowns. Get more tries. Stick to the game plan
+- Stand up if they shoot for you because takedown is 2 points even if the position is bad for the initiator
+- Don't just grip the neck while standing but put pressure as well, which helps to prepare for dive-ins
+- Be more calm to prevent getting washed out in the first 2 min
+
 ### Campeonato Clausura con KimonoTBJJ 2024
 
 - [Bracket](https://smoothcomp.com/en/event/20510/bracket/1243117)
-- Gi / White / Adult / -76 kg (Light)
+- Gi / White / Adult / -76 kg
 - Dec 2024, Lima, Peru
 - 1 loss
 
