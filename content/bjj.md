@@ -44,7 +44,7 @@ Lessons:
 
 #### vs Roberto
 
-The plan was to do a double-leg takedown and go from there. We started to fight standing and I didn't feel like I was in a good position to go for it. I began to get tired fast. Two times I did dive for it, the first time he defended and we recovered to a standing position, the second time he rolled over and I had him in a closed guard on the ground. It was counted as a takedown and he was given 2 points for it. We sat in a closed guard until the end. Lost by points 0-2.
+The plan was to do a double-leg takedown and go from there. We started to fight and I didn't feel like I was in a good position to go for it. I began to get tired fast. Two times I did dive for it, the first time he defended and we recovered to a standing position, the second time he rolled over and I had him in a closed guard on the ground. It was counted as a takedown and he was given 2 points for it. We sat in a closed guard until the end. Lost by points 0-2.
 
 Lessons:
 
@@ -62,7 +62,7 @@ Lessons:
 
 #### vs Matias
 
-My first Gi fight that was after a week of training in Gi. Was able to calm down by listening to rhythmic music just before the beginning of the fight. Oppo jump-guarded me but I felt comfortable and started to get out. He took my arm and armbared me very quickly so my arm crunched 3 times before I managed to tap. It was on 0:32.
+My first Gi fight was after a week of training in Gi. I was able to calm down by listening to rhythmic music just before the beginning of the fight. Oppo jump-guarded me but I felt comfortable and started to get out. He took my arm and armbared me very quickly so my arm crunched 3 times before I managed to tap. It was on 0:32.
 
 I felt like the skill gap was too wide to actually do anything.
 
@@ -75,7 +75,7 @@ I felt like the skill gap was too wide to actually do anything.
 
 #### vs Juan
 
-My first ever jiu-jitsu competition. Was super nervous. As I practiced very little wrestling so decided to pull guard almost immediately. After some defending from the ground, opponent just jumped on me in mount and was trying to choke me. I was able to shrimp out and retain guard, but it was already around 2 minutes into the fight and I was super washed out. After some time he did exactly the same thing and then he ezekieled me at 4:25.
+My first ever jiu-jitsu competition. Was super nervous. As I practiced very little wrestling so decided to pull guard almost immediately. After some defending from the ground, the opponent just jumped on me in the mount and was trying to choke me. I was able to shrimp out and retain guard, but it was already around 2 minutes into the fight and I was super washed out. After some time he did exactly the same thing and then he ezekieled me at 4:25.
 
 Problems:
 
