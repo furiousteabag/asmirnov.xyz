@@ -20,6 +20,21 @@ This page is for documenting my Brazilian jiu-jitsu journey.
 
 ## Tournaments
 
+### CAMPEONATO NACIONAL REGLAS ADCC 2025
+
+- [Bracket](https://smoothcomp.com/en/event/21182/bracket/1279301)
+- No-Gi / Beginner / Adult / -76 kg
+- Jan 2025, Lima, Peru
+- 1 loss
+
+#### vs Jaime
+
+The rules were new to me: 6-minute rounds, no points given during the first 3 min. In the first minute, I did a very nice double-leg takedown and had a lock behind his back. Also, I was holding his legs with my knees. Although I got a headlock, I managed to get out and started to advance to mount. At one moment my center of mass was too high and he was able to sweep me and sit in mount. From there I was defending but occasionally he took my back and RNCd me.
+
+Lessons:
+
+- Hold the person tight to the ground, putting pressure with the head and shoulders
+
 ### Môsses Summer Open
 
 - [Bracket](https://smoothcomp.com/en/event/21186/bracket/1272156)
