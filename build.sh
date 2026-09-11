@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 OUTPUT="./out"
 
 rm -rf $OUTPUT && mkdir -p $OUTPUT
