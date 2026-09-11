@@ -1,31 +1,28 @@
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
     <title>Alexander Smirnov</title>
-    <style>
-      body {
-        font-family: monospace;
-        font-size: 16px;
-        max-width: 650px;
-        margin: 50px auto;
-        padding: 0 10px;
-      }
-      a {
-        color: rgb(0, 0, 238);
-        text-decoration: none;
-      }
-      summary {
-        cursor: pointer;
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <h1>hi, I'm Alex</h1>
     <p>
-      I enjoy coding, building products, and traveling. Recently I picked up
-      <a href="/bjj">jiu-jitsu</a> and español. Contacts:
+      I'm a machine learning engineer based in London. Before startups I worked
+      on RLHF for YandexGPT, the model behind an assistant with 55M monthly
+      users. Outside work I'm into open source, self-hosting, strength training,
+      travel, and gaming (WC3, Factorio, MK1, AoE2, WoW).
+    </p>
+    <p>Contacts:</p>
+    <ul>
       <li>
         <a href="mailto:alex@asmirnov.xyz" target="_blank">alex@asmirnov.xyz</a>
+      </li>
+      <li>
+        <a href="https://github.com/furiousteabag" target="_blank">github</a>
       </li>
       <li>
         <a
@@ -35,138 +32,114 @@
           linkedin
         </a>
       </li>
-      <li>
-        <a href="https://twitter.com/asmirnovxyz" target="_blank">twitter</a>
-      </li>
-      <li>
-        <a href="https://github.com/furiousteabag" target="_blank">github</a>
-      </li>
+      <!--
+        <li>
+          <a href="https://twitter.com/asmirnovxyz" target="_blank">twitter</a>
+        </li>
+        -->
       <li>
         <a href="https://t.me/furiousteabag" target="_blank">telegram</a>
       </li>
-    </p>
+    </ul>
     <hr />
-    <h2>recent stuff I worked on</h2>
-    <details>
-      <summary>
-        <a href="https://simtown.ai/" target="_blank">SimTown</a>: An
-        interactive world with AI NPCs (<a
-          href="https://github.com/simtownai/simtown"
-          target="_blank"
-          >code</a
-        >
-        |
-        <a href="https://app.simtown.ai/" target="_blank">app</a>)
-      </summary>
-      <ul>
-        <li>
-          With
-          <a href="https://syzmony.com/" target="_blank">Szymon</a>, we created
-          an interactive world where AI-powered characters live out their daily
-          lives. These characters can perform various actions (voting,
-          conversing, giving speeches) in pursuit of their goals. Users can
-          immerse themselves in scenarios like the Harry Potter universe or
-          simulate the 2024 election with characters including Kamala Harris,
-          Donald Trump, and Pennsylvania voters.
-        </li>
-      </ul>
-    </details>
-    <details>
-      <summary>
-        <a href="https://bluesight.ai/" target="_blank">Bluesight</a>: API
-        platform for geospatial workflows (<a
-          href="https://github.com/bluesightai"
-          target="_blank"
-          >code</a
-        >
-        |
-        <a href="https://explorer.bluesight.ai/" target="_blank">explorer</a>)
-      </summary>
-      <ul>
-        <li>
-          With
-          <a href="https://syzmony.com/" target="_blank">Szymon</a>, we made an
-          API platform for geospatial workflows, like imagery classification or
-          segmentation. We also created an Explorer, where it is possible to
-          search for individual objects like Tesla cars or AC units within San
-          Francisco. We got backed by
-          <a href="https://www.joinef.com/" target="_blank"
-            >Entrepreneur First</a
-          >.
-        </li>
-      </ul>
-    </details>
-    <details>
-      <summary>
-        <a href="https://laikadog.ai/" target="_blank">Laika the Dog</a>:
-        Robodog for household chores (<a
-          href="https://github.com/laikadogai/brains"
-          target="_blank"
-          >code</a
-        >)
-      </summary>
-      <ul>
-        <li>
-          With
-          <a href="https://tayapenskaya.com/" target="_blank">Taya</a> and
-          <a href="https://syzmony.com/" target="_blank">Szymon</a> we adapted a
-          Unitree quadruped to assist with household tasks like collecting
-          clothes and doing dishes.
-        </li>
-      </ul>
-    </details>
-    <details>
-      <summary>
+    <h2>startups</h2>
+    <ul class="range">
+      <li>
+        2025-2026
+        <a href="https://taxushq.com/" target="_blank">Taxus</a>: AI for US tax
+        preparation, $115k ARR
+      </li>
+      <li>
+        2024-2025
+        <a href="https://github.com/bluesightai" target="_blank">Bluesight</a>:
+        geospatial foundation models, backed by
+        <a href="https://www.joinef.com/" target="_blank">Entrepreneur First</a>
+      </li>
+      <li>
+        2023-2024
         <a href="https://www.askguru.ai/" target="_blank">AskGuru</a>: AI
-        toolkit for customer support (<a
+        toolkit for customer support, backed by Pioneer (<a
           href="https://github.com/askguruai"
           target="_blank"
           >code</a
         >
         | <a href="/askguru">blog</a>)
-      </summary>
-      <ul>
-        <li>
-          With
-          <a href="https://www.linkedin.com/in/sergei-gorbatiuk" target="_blank"
-            >Sergei</a
-          >, we developed a collection of tools that enable customer support
-          software providers to incorporate AI features such as Q&A over
-          documents and chats, summarization, and semantic search into various
-          aspects of their product, whether it’s a customer-facing chatbot or a
-          copilot tool for agents. We got
-          <a
-            href="https://www.linkedin.com/posts/smirnov-alexander_oneclick-askguru-techcollaboration-activity-7117890188604829699-G2yT"
-            target="_blank"
-            >some customers</a
-          >
-          and were accepted into the
-          <a href="https://pioneer.app/blog/july-2023/" target="_blank"
-            >Pioneer acceleration program</a
-          >.
-        </li>
-      </ul>
-    </details>
-    <h2>some posts</h2>
-    <li>
-      Jun 2024
-      <a href="/ef">Is Entrepreneur First worth the time?</a>
-    </li>
-    <li>
-      Dec 2023
-      <a href="/vram">Breaking down GPU VRAM consumption</a>
-    </li>
-    <li>
-      Nov 2023
-      <a href="/doppelganger">
-        Learnings from fine-tuning LLM on my Telegram messages
-      </a>
-    </li>
-    <li>
-      Nov 2023
-      <a href="/askguru">The story of failing AI startup in 2023</a>
-    </li>
-    <li>Jun 2023 <a href="/yc-interview-s23">YC interview experience</a></li>
+      </li>
+    </ul>
+    <h2>projects</h2>
+    <ul class="year">
+      <li>
+        2025 <a href="https://github.com/hirelogan" target="_blank">Logan</a>:
+        AI voice agent chasing overdue invoices
+      </li>
+      <li>
+        2025
+        <a href="https://github.com/simtownai/simtown" target="_blank"
+          >SimTown</a
+        >: an interactive world with AI NPCs
+      </li>
+      <li>
+        2024
+        <a href="https://github.com/laikadogai" target="_blank">Laika the Dog</a
+        >: a Unitree quadruped doing household chores
+      </li>
+      <li>
+        2024
+        <a href="https://vram.asmirnov.xyz/" target="_blank">VRAM Calculator</a
+        >: estimating GPU memory for LLM training and inference,
+        <a href="https://news.ycombinator.com/item?id=38774026" target="_blank"
+          >front page of HN</a
+        >
+        (<a
+          href="https://github.com/furiousteabag/vram-calculator"
+          target="_blank"
+          >code</a
+        >
+        | <a href="/vram">post</a>)
+      </li>
+      <li>
+        2023
+        <a href="https://github.com/furiousteabag/doppelganger" target="_blank"
+          >Doppelganger</a
+        >: fine-tuning an LLM on my Telegram messages,
+        <a href="https://news.ycombinator.com/item?id=38434914" target="_blank"
+          >front page of HN</a
+        >, 220+ stars, talks at ODS DataFest and DataStart (<a
+          href="/doppelganger"
+          >post</a
+        >)
+      </li>
+    </ul>
+    <h2>posts</h2>
+    <ul class="year">
+      <li>
+        <!-- Jun -->
+        2024
+        <a href="/ef">Is Entrepreneur First worth the time?</a>
+      </li>
+      <li>
+        <!-- Dec -->
+        2023
+        <a href="/vram">Breaking down GPU VRAM consumption</a>
+      </li>
+      <li>
+        <!-- Nov -->
+        2023
+        <a href="/doppelganger">
+          Learnings from fine-tuning LLM on my Telegram messages
+        </a>
+      </li>
+      <li>
+        <!-- Nov -->
+        2023
+        <a href="/askguru">The story of failing AI startup in 2023</a>
+      </li>
+      <li>
+        <!-- Jun -->
+        2023 <a href="/yc-interview-s23">YC interview experience</a>
+      </li>
+    </ul>
+    <!--
     <h2>learning notes</h2>
     <li>Mar 2024 <a href="/mom-test">Mom Test</a></li>
     <li>
@@ -177,11 +150,13 @@
       <a href="/safe">Understanding SAFEs and priced equity rounds</a>
     </li>
     <li>Mar 2023 <a href="/startup-ideas">How to get startup ideas</a></li>
+    -->
+    <!--
     <h2>talks</h2>
     <li>
       July 2024
-      <!-- https://t.me/datastartconf/5608 -->
-      <!-- https://datastart.ru/cabinet/dashboard?event=ONLINE_SUMMER_2024 -->
+      https://t.me/datastartconf/5608
+      https://datastart.ru/cabinet/dashboard?event=ONLINE_SUMMER_2024
       <a href="https://www.youtube.com/watch?v=wzMmEpBZ9iU">
         Pretending to be ourselves and our friends by training an LLM on
         Telegram messages
@@ -199,9 +174,9 @@
     </ul>
     <li>
       May 2024
-      <!-- https://ods.ai/tracks/df24-allm -->
-      <!-- https://ods.ai/tracks/df24-allm/blocks/245532db-d1e4-4466-a382-e0dc9314ce4c -->
-      <!-- <a href="https://www.youtube.com/live/dPc7GwIKJK0?t=22013s"> -->
+      https://ods.ai/tracks/df24-allm
+      https://ods.ai/tracks/df24-allm/blocks/245532db-d1e4-4466-a382-e0dc9314ce4c
+      <a href="https://www.youtube.com/live/dPc7GwIKJK0?t=22013s">
       <a href="https://www.youtube.com/watch?v=HAp3lQ_mpZI">
         Pretending to be ourselves and our friends by training an LLM on
         Telegram messages
@@ -229,5 +204,6 @@
     <ul>
       <li>Panel Discussion | <a href="https://imlconf.com/">I’ML</a></li>
     </ul>
+    -->
   </body>
 </html>
