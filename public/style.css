@@ -35,7 +35,7 @@ td {
   border: 2px solid gray;
   border-collapse: collapse;
 }
-/* index.html: hanging indent sized to the date prefix */
+/* wrap under the title, not under the date */
 ul.range li {
   padding-left: 10ch;
   text-indent: -10ch;
@@ -43,4 +43,16 @@ ul.range li {
 ul.year li {
   padding-left: 5ch;
   text-indent: -5ch;
+}
+
+/* on a phone that indent eats half the line */
+@media (max-width: 600px) {
+  ul {
+    padding-left: 22px;
+  }
+  ul.range li,
+  ul.year li {
+    padding-left: 0;
+    text-indent: 0;
+  }
 }
